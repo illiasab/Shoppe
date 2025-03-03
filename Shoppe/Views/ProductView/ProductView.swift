@@ -25,8 +25,7 @@ struct ProductView: View {
 					.frame(width: geometry.size.width, height: geometry.size.height * 3 / 7)
 				HStack {
 					Text("\(price, format: .currency(code: "USD"))")
-						.font(.title2)
-						.fontWeight(.bold)
+						.applyFont(.raleway, .bold, 26)
 					Spacer()
 					Image(systemName: isFavourite ? "heart.fill" : "heart")
 						.foregroundColor(.red)
@@ -35,12 +34,12 @@ struct ProductView: View {
 				}
 				.padding(20)
 				Text(description)
+					.applyFont(.nunitoSans, .regular, 15)
 					.padding(.horizontal, 20)
 				HStack(alignment: .center) {
 					Text("Variations")
+						.applyFont(.raleway, .bold, 20)
 						.padding(20)
-						.font(.title)
-						.fontWeight(.bold)
 					ForEach(variationPlaceholders, id: \.self) { placeholder in
 						FilterProductViewButton(label: placeholder)
 					}
@@ -75,7 +74,7 @@ struct FilterProductViewButton: View {
 		}) {
 			Text(label)
 				.foregroundColor(.mainBlack)
-				.font(.footnote)
+				.applyFont(.raleway, .regular, 14)
 				.padding(.vertical, 5)
 				.frame(minWidth: 54)
 				.background(.customGray) // Background color
@@ -99,30 +98,28 @@ struct BottomTabBar: View {
 					.background(.customGray)
 					.cornerRadius(10)
 			}
-			Button(action: {
-
-			}) {
-				Text("Add to cart")
-					.foregroundColor(.white)
-					.font(.title2)
-					.padding(10)
-					.frame(maxWidth: .infinity)
-					.background(.mainBlack)
-					.cornerRadius(10)
-			}
-			Button(action: {
-
-			}) {
-				Text("Buy now")
-					.foregroundColor(.white)
-					.font(.title2)
-					.padding(10)
-					.frame(maxWidth: .infinity)
-					.background(.mainBlue)
-					.cornerRadius(10)
-			}
+			TapBarProductViewButton(action: {}, label: "Add to cart", color: .mainBlack)
+			TapBarProductViewButton(action: {}, label: "Buy now", color: .mainBlue)
 		}
 		.padding(.horizontal, 20)
+	}
+}
+
+struct TapBarProductViewButton: View {
+	let action: () -> ()
+	let label: String
+	let color: Color
+
+	var body: some View {
+		Button(action: action) {
+			Text(label)
+				.foregroundColor(.white)
+				.applyFont(.nunitoSans, .regular, 16)
+				.padding(10)
+				.frame(maxWidth: .infinity)
+				.background(color)
+				.cornerRadius(10)
+		}
 	}
 }
 
@@ -157,7 +154,6 @@ struct MainImageView: View {
 				.padding(.bottom, 8)
 			}
 		}
-		.ignoresSafeArea(.all)
 	}
 }
 
