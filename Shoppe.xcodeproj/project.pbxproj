@@ -80,6 +80,10 @@
 		ADD726EE2D752F1600B51792 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4ABAA3832D74DFDE00F17D4D /* ProductView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProductView; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		AD86807C2D74C1AF004C6D13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAB30A62D75680700D47FFD /* LaunchView */,
+				4ABAA3832D74DFDE00F17D4D /* ProductView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +297,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4ABAA3832D74DFDE00F17D4D /* ProductView */,
 			);
 			name = Shoppe;
 			packageProductDependencies = (
