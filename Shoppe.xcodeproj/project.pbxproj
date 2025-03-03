@@ -21,6 +21,10 @@
 		AD8680942D74C1C1004C6D13 /* ShoppeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppeApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4ABAA3832D74DFDE00F17D4D /* ProductView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProductView; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		AD86807C2D74C1AF004C6D13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -63,6 +67,7 @@
 				AD8680932D74C1C1004C6D13 /* ContentView.swift */,
 				AD86809A2D74C1DB004C6D13 /* Resources */,
 				AD8680912D74C1C1004C6D13 /* Preview Content */,
+				4ABAA3832D74DFDE00F17D4D /* ProductView */,
 			);
 			path = Shoppe;
 			sourceTree = "<group>";
@@ -121,6 +126,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4ABAA3832D74DFDE00F17D4D /* ProductView */,
 			);
 			name = Shoppe;
 			packageProductDependencies = (
