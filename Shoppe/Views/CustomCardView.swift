@@ -9,23 +9,28 @@ import SwiftUI
 
 struct CustomCardView: View {
     let product: Product
+    @State private var isFavourite = false
     
     var body: some View {
         VStack {
             Image(product.imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 150)
                 .cornerRadius(10)
+                .overlay(RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.white, lineWidth: 2))
+                .shadow(color: .gray.opacity(0.4), radius: 5, x: 0, y: 2)
             
             Text(product.name)
                 .applyFont(.nunitoSans, .regular, 12)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .multilineTextAlignment(.leading)
+                .padding(.top, 5)
             
             Text(product.price)
                 .applyFont(.raleway, .bold, 17)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 6)
             
             HStack {
                 Button(action: {}) {
@@ -39,14 +44,15 @@ struct CustomCardView: View {
                 }
                 
                 Spacer()
-                Button(action: {}) {
-                    Image(systemName: "heart")
+                Button(action: {isFavourite.toggle()}) {
+                    Image(systemName: isFavourite ? "heart.fill" : "heart")
                         .font(.system(size: 24))
                         .foregroundColor(.red)
                 }
                 .padding(.trailing, 10)
             }
         }
+        .padding(.top, 10)
         .background(RoundedRectangle(cornerRadius: 10)
         .fill(Color.white)
         .shadow(radius: 3))
