@@ -20,6 +20,22 @@
 		AD8680E12D7520A6004C6D13 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD8680E02D7520A6004C6D13 /* Poppins-Medium.ttf */; };
 		AD8680F22D752843004C6D13 /* Inter-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD8680F12D752843004C6D13 /* Inter-VariableFont_opsz,wght.ttf */; };
 		AD8680F42D7528C9004C6D13 /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD8680F32D7528C9004C6D13 /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf */; };
+		ADAB308D2D753B8900D47FFD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB308C2D753B7900D47FFD /* AppCoordinator.swift */; };
+		ADAB308F2D753C2700D47FFD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB308E2D753C2100D47FFD /* Coordinator.swift */; };
+		ADAB30922D753D9900D47FFD /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30912D753D8F00D47FFD /* LaunchCoordinator.swift */; };
+		ADAB30952D753EBE00D47FFD /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30942D753EB000D47FFD /* Dependencies.swift */; };
+		ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30962D753FB300D47FFD /* HTTPClient.swift */; };
+		ADAB309A2D7540EA00D47FFD /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = ADAB30992D7540EA00D47FFD /* CombineMoya */; };
+		ADAB309C2D7540EA00D47FFD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = ADAB309B2D7540EA00D47FFD /* Moya */; };
+		ADAB309E2D7540EA00D47FFD /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = ADAB309D2D7540EA00D47FFD /* ReactiveMoya */; };
+		ADAB30A02D7540EA00D47FFD /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = ADAB309F2D7540EA00D47FFD /* RxMoya */; };
+		ADAB30A32D7541A900D47FFD /* ShoppeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30A22D75419E00D47FFD /* ShoppeEndpoint.swift */; };
+		ADAB30A52D75481A00D47FFD /* ModuleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30A42D75481400D47FFD /* ModuleContainer.swift */; };
+		ADAB30A82D75681800D47FFD /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30A72D75681300D47FFD /* LaunchView.swift */; };
+		ADAB30AA2D75793500D47FFD /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30A92D75792300D47FFD /* UserDefaultsRepository.swift */; };
+		ADAB30AC2D757A0700D47FFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30AB2D7579FF00D47FFD /* Constants.swift */; };
+		ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30AE2D757DD100D47FFD /* Response.swift */; };
+		ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30B02D757E0400D47FFD /* HTTPError.swift */; };
 		ADD726E42D752CB500B51792 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */; };
 		ADD726E72D752ED500B51792 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */; };
 		ADD726E92D752EEB00B51792 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */; };
@@ -44,6 +60,18 @@
 		AD8680F02D75259E004C6D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AD8680F12D752843004C6D13 /* Inter-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
 		AD8680F32D7528C9004C6D13 /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf"; sourceTree = "<group>"; };
+		ADAB308C2D753B7900D47FFD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		ADAB308E2D753C2100D47FFD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ADAB30912D753D8F00D47FFD /* LaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
+		ADAB30942D753EB000D47FFD /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		ADAB30962D753FB300D47FFD /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		ADAB30A22D75419E00D47FFD /* ShoppeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppeEndpoint.swift; sourceTree = "<group>"; };
+		ADAB30A42D75481400D47FFD /* ModuleContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleContainer.swift; sourceTree = "<group>"; };
+		ADAB30A72D75681300D47FFD /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		ADAB30A92D75792300D47FFD /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
+		ADAB30AB2D7579FF00D47FFD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ADAB30AE2D757DD100D47FFD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		ADAB30B02D757E0400D47FFD /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -57,6 +85,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADAB309C2D7540EA00D47FFD /* Moya in Frameworks */,
+				ADAB309A2D7540EA00D47FFD /* CombineMoya in Frameworks */,
+				ADAB30A02D7540EA00D47FFD /* RxMoya in Frameworks */,
+				ADAB309E2D7540EA00D47FFD /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +126,13 @@
 				AD86809B2D74C29C004C6D13 /* App */,
 				AD8680932D74C1C1004C6D13 /* ContentView.swift */,
 				ADD726F02D75328C00B51792 /* AppCoordinator */,
+				ADAB30902D753D6900D47FFD /* Dependency */,
+				ADAB30A12D75413100D47FFD /* EndPoint */,
+				ADAB30932D753E7F00D47FFD /* Utility */,
 				AD86809E2D74C5AF004C6D13 /* Models */,
 				AD86809D2D74C5A4004C6D13 /* Services */,
 				AD86809C2D74C599004C6D13 /* Views */,
+				ADAB30AD2D757D8E00D47FFD /* Errors */,
 				AD86809A2D74C1DB004C6D13 /* Resources */,
 				AD8680912D74C1C1004C6D13 /* Preview Content */,
 			);
@@ -106,6 +142,7 @@
 		AD86809A2D74C1DB004C6D13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB30AB2D7579FF00D47FFD /* Constants.swift */,
 				ADD726E52D752EB900B51792 /* Poppins */,
 				AD8680E72D75234E004C6D13 /* Inter */,
 				AD8680E22D7520AB004C6D13 /* RalewayFont */,
@@ -127,6 +164,7 @@
 		AD86809C2D74C599004C6D13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB30A62D75680700D47FFD /* LaunchView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +172,7 @@
 		AD86809D2D74C5A4004C6D13 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB30A92D75792300D47FFD /* UserDefaultsRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -174,6 +213,48 @@
 			path = Inter;
 			sourceTree = "<group>";
 		};
+		ADAB30902D753D6900D47FFD /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB30942D753EB000D47FFD /* Dependencies.swift */,
+				ADAB30A42D75481400D47FFD /* ModuleContainer.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		ADAB30932D753E7F00D47FFD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB30962D753FB300D47FFD /* HTTPClient.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		ADAB30A12D75413100D47FFD /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB30A22D75419E00D47FFD /* ShoppeEndpoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		ADAB30A62D75680700D47FFD /* LaunchView */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB30A72D75681300D47FFD /* LaunchView.swift */,
+			);
+			path = LaunchView;
+			sourceTree = "<group>";
+		};
+		ADAB30AD2D757D8E00D47FFD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB30B02D757E0400D47FFD /* HTTPError.swift */,
+				ADAB30AE2D757DD100D47FFD /* Response.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		ADD726E52D752EB900B51792 /* Poppins */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +271,9 @@
 		ADD726F02D75328C00B51792 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				ADAB30912D753D8F00D47FFD /* LaunchCoordinator.swift */,
+				ADAB308E2D753C2100D47FFD /* Coordinator.swift */,
+				ADAB308C2D753B7900D47FFD /* AppCoordinator.swift */,
 			);
 			path = AppCoordinator;
 			sourceTree = "<group>";
@@ -211,6 +295,10 @@
 			);
 			name = Shoppe;
 			packageProductDependencies = (
+				ADAB30992D7540EA00D47FFD /* CombineMoya */,
+				ADAB309B2D7540EA00D47FFD /* Moya */,
+				ADAB309D2D7540EA00D47FFD /* ReactiveMoya */,
+				ADAB309F2D7540EA00D47FFD /* RxMoya */,
 			);
 			productName = Shoppe;
 			productReference = AD86807F2D74C1AF004C6D13 /* Shoppe.app */;
@@ -241,6 +329,9 @@
 			);
 			mainGroup = AD8680762D74C1AF004C6D13;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				ADAB30982D7540EA00D47FFD /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = AD8680802D74C1AF004C6D13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -281,9 +372,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADAB30952D753EBE00D47FFD /* Dependencies.swift in Sources */,
+				ADAB30A82D75681800D47FFD /* LaunchView.swift in Sources */,
+				ADAB30A52D75481A00D47FFD /* ModuleContainer.swift in Sources */,
+				ADAB308D2D753B8900D47FFD /* AppCoordinator.swift in Sources */,
+				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
 				AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */,
+				ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */,
+				ADAB30AA2D75793500D47FFD /* UserDefaultsRepository.swift in Sources */,
+				ADAB30AC2D757A0700D47FFD /* Constants.swift in Sources */,
+				ADAB308F2D753C2700D47FFD /* Coordinator.swift in Sources */,
 				AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */,
 				AD8680A22D751C7E004C6D13 /* Font.swift in Sources */,
+				ADAB30A32D7541A900D47FFD /* ShoppeEndpoint.swift in Sources */,
+				ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */,
+				ADAB30922D753D9900D47FFD /* LaunchCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +596,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADAB30982D7540EA00D47FFD /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya#installation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADAB30992D7540EA00D47FFD /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADAB30982D7540EA00D47FFD /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		ADAB309B2D7540EA00D47FFD /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADAB30982D7540EA00D47FFD /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		ADAB309D2D7540EA00D47FFD /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADAB30982D7540EA00D47FFD /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		ADAB309F2D7540EA00D47FFD /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADAB30982D7540EA00D47FFD /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD8680772D74C1AF004C6D13 /* Project object */;
 }
