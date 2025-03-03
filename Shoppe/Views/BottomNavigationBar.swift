@@ -8,35 +8,37 @@
 import SwiftUI
 
 struct BottomNavigationBar: View {
+    @State private var selectedTab: String = "shop"
     var body: some View {
         HStack {
             Spacer()
-            Button(action: {}) {
-                Image(systemName: "house")
+            Button(action: {selectedTab = "shop"}) {
+                Image(selectedTab == "shop" ? "shopActive" :"shopz")
                     .font(.title2)
                     .foregroundColor(.black)
             }
             Spacer()
-            Button(action: {}) {
-                Image(systemName: "heart")
+            Button(action: {selectedTab = "heart"}) {
+                Image(selectedTab == "heart" ? "heartActivez" : "heartz")
                     .font(.title2)
                     .foregroundColor(.blue)
             }
             Spacer()
             Button(action: {}) {
-                Image(systemName: "list.bullet")
+                Image("Categoriesz")
                     .font(.title2)
                     .foregroundColor(.blue)
             }
             Spacer()
-            Button(action: {}) {
-                Image(systemName: "bag")
+            Button(action: {selectedTab = "cart"}) {
+                Image(selectedTab == "cart" ? "cartActivez" : "cartz")
                     .font(.title2)
                     .foregroundColor(.blue)
+                
             }
             Spacer()
-            Button(action: {}) {
-                Image(systemName: "person")
+            Button(action: {selectedTab = "human"}) {
+                Image(selectedTab == "human" ? "humanActive" : "human")
                     .font(.title2)
                     .foregroundColor(.blue)
             }
