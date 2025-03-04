@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0F694C2D76396C000CF5FB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F694B2D763966000CF5FB /* AlertController.swift */; };
+		AD0F694F2D76493B000CF5FB /* LaunchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */; };
+		AD0F69512D766119000CF5FB /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */; };
+		AD0F69542D766159000CF5FB /* OnboardingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69532D766153000CF5FB /* OnboardingAssembly.swift */; };
+		AD0F69562D76618A000CF5FB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69552D766182000CF5FB /* OnboardingView.swift */; };
+		AD0F69582D7667BC000CF5FB /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69572D7667B2000CF5FB /* AuthCoordinator.swift */; };
+		AD0F695B2D76686C000CF5FB /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F695A2D766860000CF5FB /* AuthAssembly.swift */; };
+		AD0F695F2D766944000CF5FB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F695E2D766941000CF5FB /* SignUpView.swift */; };
+		AD0F69612D76694B000CF5FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69602D766947000CF5FB /* LoginView.swift */; };
+		AD0F69632D7669A6000CF5FB /* SignUpAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69622D76699F000CF5FB /* SignUpAssembly.swift */; };
+		AD0F69652D7669B5000CF5FB /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69642D7669AB000CF5FB /* LoginAssembly.swift */; };
+		AD0F69682D766B8C000CF5FB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69672D766B84000CF5FB /* StartView.swift */; };
+		AD0F696A2D7676FA000CF5FB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69692D7676F3000CF5FB /* MainCoordinator.swift */; };
+		AD0F696D2D7677A3000CF5FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F696C2D7677A0000CF5FB /* HomeView.swift */; };
+		AD0F696F2D7679DB000CF5FB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F696E2D7679D4000CF5FB /* LoginViewModel.swift */; };
+		AD0F69712D767AA8000CF5FB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69702D767AA1000CF5FB /* SignUpViewModel.swift */; };
+		AD0F69732D767BA9000CF5FB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69722D767BA4000CF5FB /* AuthService.swift */; };
+		AD0F69752D768300000CF5FB /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69742D7682FB000CF5FB /* HomeAssembly.swift */; };
+		AD0F69772D76838A000CF5FB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69762D768385000CF5FB /* HomeViewModel.swift */; };
+		AD0F697A2D76D0DF000CF5FB /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69792D76D0D7000CF5FB /* CustomButtonView.swift */; };
 		AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680932D74C1C1004C6D13 /* ContentView.swift */; };
 		AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680942D74C1C1004C6D13 /* ShoppeApp.swift */; };
 		AD8680982D74C1C1004C6D13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */; };
@@ -45,6 +65,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD0F694B2D763966000CF5FB /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAssembly.swift; sourceTree = "<group>"; };
+		AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		AD0F69532D766153000CF5FB /* OnboardingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAssembly.swift; sourceTree = "<group>"; };
+		AD0F69552D766182000CF5FB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		AD0F69572D7667B2000CF5FB /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		AD0F695A2D766860000CF5FB /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		AD0F695E2D766941000CF5FB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AD0F69602D766947000CF5FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AD0F69622D76699F000CF5FB /* SignUpAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAssembly.swift; sourceTree = "<group>"; };
+		AD0F69642D7669AB000CF5FB /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		AD0F69672D766B84000CF5FB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		AD0F69692D7676F3000CF5FB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		AD0F696C2D7677A0000CF5FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AD0F696E2D7679D4000CF5FB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AD0F69702D767AA1000CF5FB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		AD0F69722D767BA4000CF5FB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AD0F69742D7682FB000CF5FB /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		AD0F69762D768385000CF5FB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AD0F69792D76D0D7000CF5FB /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		AD86807F2D74C1AF004C6D13 /* Shoppe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shoppe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD8680922D74C1C1004C6D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +135,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0F69522D766142000CF5FB /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0F69552D766182000CF5FB /* OnboardingView.swift */,
+				AD0F69532D766153000CF5FB /* OnboardingAssembly.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		AD0F69592D76684A000CF5FB /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0F695D2D766937000CF5FB /* SignUpView */,
+				AD0F695C2D76692D000CF5FB /* LogInView */,
+				AD0F695A2D766860000CF5FB /* AuthAssembly.swift */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		AD0F695C2D76692D000CF5FB /* LogInView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0F696E2D7679D4000CF5FB /* LoginViewModel.swift */,
+				AD0F69642D7669AB000CF5FB /* LoginAssembly.swift */,
+				AD0F69602D766947000CF5FB /* LoginView.swift */,
+			);
+			path = LogInView;
+			sourceTree = "<group>";
+		};
+		AD0F695D2D766937000CF5FB /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0F69702D767AA1000CF5FB /* SignUpViewModel.swift */,
+				AD0F69622D76699F000CF5FB /* SignUpAssembly.swift */,
+				AD0F695E2D766941000CF5FB /* SignUpView.swift */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		AD0F69662D766B7C000CF5FB /* StartView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0F69672D766B84000CF5FB /* StartView.swift */,
+			);
+			path = StartView;
+			sourceTree = "<group>";
+		};
+		AD0F696B2D767797000CF5FB /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0F69762D768385000CF5FB /* HomeViewModel.swift */,
+				AD0F69742D7682FB000CF5FB /* HomeAssembly.swift */,
+				AD0F696C2D7677A0000CF5FB /* HomeView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		AD0F69782D76D0CB000CF5FB /* CustomButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				AD0F69792D76D0D7000CF5FB /* CustomButtonView.swift */,
+			);
+			path = CustomButtonView;
+			sourceTree = "<group>";
+		};
 		AD8680762D74C1AF004C6D13 = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +269,12 @@
 		AD86809C2D74C599004C6D13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD0F696B2D767797000CF5FB /* HomeView */,
+				AD0F69662D766B7C000CF5FB /* StartView */,
+				AD0F69592D76684A000CF5FB /* AuthView */,
+				AD0F69522D766142000CF5FB /* OnboardingView */,
 				ADAB30A62D75680700D47FFD /* LaunchView */,
+				AD0F69782D76D0CB000CF5FB /* CustomButtonView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +282,7 @@
 		AD86809D2D74C5A4004C6D13 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AD0F69722D767BA4000CF5FB /* AuthService.swift */,
 				ADAB30A92D75792300D47FFD /* UserDefaultsRepository.swift */,
 			);
 			path = Services;
@@ -226,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAB30962D753FB300D47FFD /* HTTPClient.swift */,
+				AD0F694B2D763966000CF5FB /* AlertController.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -241,6 +353,7 @@
 		ADAB30A62D75680700D47FFD /* LaunchView */ = {
 			isa = PBXGroup;
 			children = (
+				AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */,
 				ADAB30A72D75681300D47FFD /* LaunchView.swift */,
 			);
 			path = LaunchView;
@@ -271,6 +384,9 @@
 		ADD726F02D75328C00B51792 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				AD0F69692D7676F3000CF5FB /* MainCoordinator.swift */,
+				AD0F69572D7667B2000CF5FB /* AuthCoordinator.swift */,
+				AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */,
 				ADAB30912D753D8F00D47FFD /* LaunchCoordinator.swift */,
 				ADAB308E2D753C2100D47FFD /* Coordinator.swift */,
 				ADAB308C2D753B7900D47FFD /* AppCoordinator.swift */,
@@ -372,18 +488,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0F697A2D76D0DF000CF5FB /* CustomButtonView.swift in Sources */,
 				ADAB30952D753EBE00D47FFD /* Dependencies.swift in Sources */,
+				AD0F696A2D7676FA000CF5FB /* MainCoordinator.swift in Sources */,
+				AD0F695B2D76686C000CF5FB /* AuthAssembly.swift in Sources */,
+				AD0F69752D768300000CF5FB /* HomeAssembly.swift in Sources */,
 				ADAB30A82D75681800D47FFD /* LaunchView.swift in Sources */,
+				AD0F69632D7669A6000CF5FB /* SignUpAssembly.swift in Sources */,
 				ADAB30A52D75481A00D47FFD /* ModuleContainer.swift in Sources */,
+				AD0F695F2D766944000CF5FB /* SignUpView.swift in Sources */,
 				ADAB308D2D753B8900D47FFD /* AppCoordinator.swift in Sources */,
+				AD0F69712D767AA8000CF5FB /* SignUpViewModel.swift in Sources */,
+				AD0F696F2D7679DB000CF5FB /* LoginViewModel.swift in Sources */,
+				AD0F69612D76694B000CF5FB /* LoginView.swift in Sources */,
+				AD0F69582D7667BC000CF5FB /* AuthCoordinator.swift in Sources */,
+				AD0F69652D7669B5000CF5FB /* LoginAssembly.swift in Sources */,
 				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
+				AD0F696D2D7677A3000CF5FB /* HomeView.swift in Sources */,
+				AD0F69732D767BA9000CF5FB /* AuthService.swift in Sources */,
+				AD0F69772D76838A000CF5FB /* HomeViewModel.swift in Sources */,
 				AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */,
 				ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */,
 				ADAB30AA2D75793500D47FFD /* UserDefaultsRepository.swift in Sources */,
 				ADAB30AC2D757A0700D47FFD /* Constants.swift in Sources */,
+				AD0F69542D766159000CF5FB /* OnboardingAssembly.swift in Sources */,
 				ADAB308F2D753C2700D47FFD /* Coordinator.swift in Sources */,
+				AD0F694F2D76493B000CF5FB /* LaunchAssembly.swift in Sources */,
+				AD0F69682D766B8C000CF5FB /* StartView.swift in Sources */,
 				AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */,
+				AD0F69562D76618A000CF5FB /* OnboardingView.swift in Sources */,
 				AD8680A22D751C7E004C6D13 /* Font.swift in Sources */,
+				AD0F69512D766119000CF5FB /* OnboardingCoordinator.swift in Sources */,
+				AD0F694C2D76396C000CF5FB /* AlertController.swift in Sources */,
 				ADAB30A32D7541A900D47FFD /* ShoppeEndpoint.swift in Sources */,
 				ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */,
 				ADAB30922D753D9900D47FFD /* LaunchCoordinator.swift in Sources */,
