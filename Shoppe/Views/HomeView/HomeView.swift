@@ -32,7 +32,6 @@ struct HomeView: View {
                                addInCartaction: homeVM.addInCart,
                                addInFavorites: homeVM.addInFavorit)
             }
-            .padding(.bottom, 50)
     }
     
 }

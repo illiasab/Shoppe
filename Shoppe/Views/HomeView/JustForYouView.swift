@@ -74,6 +74,7 @@ struct JustForYouView: View {
             }
         }
         .padding(.horizontal, 20)
+        .padding(.bottom,50)
     }
 }
 
