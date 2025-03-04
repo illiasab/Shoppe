@@ -36,6 +36,7 @@
 		ADAB30AC2D757A0700D47FFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30AB2D7579FF00D47FFD /* Constants.swift */; };
 		ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30AE2D757DD100D47FFD /* Response.swift */; };
 		ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30B02D757E0400D47FFD /* HTTPError.swift */; };
+		ADC9468D2D76E08300A58D2D /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9468B2D76E08300A58D2D /* ProductView.swift */; };
 		ADD726E42D752CB500B51792 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */; };
 		ADD726E72D752ED500B51792 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */; };
 		ADD726E92D752EEB00B51792 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */; };
@@ -72,6 +73,7 @@
 		ADAB30AB2D7579FF00D47FFD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ADAB30AE2D757DD100D47FFD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		ADAB30B02D757E0400D47FFD /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		ADC9468B2D76E08300A58D2D /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -79,10 +81,6 @@
 		ADD726EC2D752F0A00B51792 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		ADD726EE2D752F1600B51792 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		4ABAA3832D74DFDE00F17D4D /* ProductView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProductView; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AD86807C2D74C1AF004C6D13 /* Frameworks */ = {
@@ -169,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAB30A62D75680700D47FFD /* LaunchView */,
-				4ABAA3832D74DFDE00F17D4D /* ProductView */,
+				ADC9468C2D76E08300A58D2D /* ProductView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +258,14 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		ADC9468C2D76E08300A58D2D /* ProductView */ = {
+			isa = PBXGroup;
+			children = (
+				ADC9468B2D76E08300A58D2D /* ProductView.swift */,
+			);
+			path = ProductView;
+			sourceTree = "<group>";
+		};
 		ADD726E52D752EB900B51792 /* Poppins */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,9 +303,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				4ABAA3832D74DFDE00F17D4D /* ProductView */,
 			);
 			name = Shoppe;
 			packageProductDependencies = (
@@ -388,6 +391,7 @@
 				AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */,
 				ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */,
 				ADAB30AA2D75793500D47FFD /* UserDefaultsRepository.swift in Sources */,
+				ADC9468D2D76E08300A58D2D /* ProductView.swift in Sources */,
 				ADAB30AC2D757A0700D47FFD /* Constants.swift in Sources */,
 				ADAB308F2D753C2700D47FFD /* Coordinator.swift in Sources */,
 				AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */,
