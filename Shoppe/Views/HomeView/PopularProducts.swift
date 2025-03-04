@@ -25,7 +25,7 @@ struct PopularProducts: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 9)
                                     .foregroundStyle(.white)
-                                    .shadow(radius: 5)
+                                    .shadow(color: .gray.opacity(0.4), radius: 5, x: 0, y: 2)
                                 
                                 AsyncImage(url: URL(string: product.imageUrl)) { Image in
                                     Image
