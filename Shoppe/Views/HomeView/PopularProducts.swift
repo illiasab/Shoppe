@@ -16,6 +16,7 @@ struct PopularProducts: View {
         VStack(spacing: 5) {
             ScrollButtons(title: "Popular", button: true, action: {action()})
                 .padding(.horizontal,20)
+                .padding(.top,10)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 10) {

@@ -29,7 +29,7 @@ class HomeViewModel: ObservableObject {
     
     var cartItemsCount = 2
     var chooseCategories: [Category] = [.clothing, .bags, .watch, .lingerie, .hoodies, .shoes]
-    let adresses = ["Russia, Moscow", "USA, Las Vegas", "England, Manchester"] //"Salatiga City, Central Java""/
+    let adresses = ["Russia, Moscow", "USA, Las Vegas", "England, Manchester"]
     
     let popularProducts = [Product(title: "Adidas", price: "99", imageUrl: "Lorem ipsum dolor sit amet consectetur.", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "")]
     

@@ -16,6 +16,7 @@ struct JustForYouView: View {
     var body: some View {
         ScrollButtons(title: "Just For You", button: false, action: {})
             .padding(.horizontal,20)
+            .padding(.top,20)
         
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)]) {
             ForEach(products, id:\.id) { product in
