@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381D0C5D2D775BDC00B23B6B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381D0C5C2D775BDC00B23B6B /* OnboardingView.swift */; };
 		AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680932D74C1C1004C6D13 /* ContentView.swift */; };
 		AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680942D74C1C1004C6D13 /* ShoppeApp.swift */; };
 		AD8680982D74C1C1004C6D13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381D0C5C2D775BDC00B23B6B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AD86807F2D74C1AF004C6D13 /* Shoppe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shoppe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD8680922D74C1C1004C6D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		381D0C5B2D775BD500B23B6B /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				381D0C5C2D775BDC00B23B6B /* OnboardingView.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
 		AD8680762D74C1AF004C6D13 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		AD86809C2D74C599004C6D13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				381D0C5B2D775BD500B23B6B /* OnboardingView */,
 				ADAB30A62D75680700D47FFD /* LaunchView */,
 				ADC9468C2D76E08300A58D2D /* ProductView */,
 			);
@@ -398,6 +409,7 @@
 				AD8680A22D751C7E004C6D13 /* Font.swift in Sources */,
 				ADAB30A32D7541A900D47FFD /* ShoppeEndpoint.swift in Sources */,
 				ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */,
+				381D0C5D2D775BDC00B23B6B /* OnboardingView.swift in Sources */,
 				ADAB30922D753D9900D47FFD /* LaunchCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
