@@ -16,35 +16,39 @@ struct CategoryItems: View {
         
         ZStack {
             RoundedRectangle(cornerRadius: 9)
-                .shadow(radius: 5)
+                .shadow(color: .gray.opacity(0.4), radius: 5, x: 0, y: 2)
                 .foregroundStyle(.white)
                 
-            VStack {
-                LazyVGrid(columns: [GridItem(.fixed(70)), GridItem(.fixed(70))]) {
+            VStack(spacing: 5) {
+                LazyVGrid (columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 0) {
                     ForEach(images, id: \.self) { item in
                         Image(item)
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
                             .clipShape(RoundedRectangle(cornerRadius: 9))
+                            .padding(5)
                     }
                 }
                 HStack {
                     Text(title)
-                        .font(.system(size: 17)) // rale 17 med
+                        .applyFont(.raleway,.bold,17)
                     Spacer()
                     ZStack {
                         RoundedRectangle(cornerRadius: 9)
                             .frame(width: 38, height: 20)
-                            .foregroundStyle(.cyan)             // Color
+                            .foregroundStyle(.blue)
                         Text(count)
+                            .applyFont(.raleway,.bold,12)
                             .foregroundStyle(.black)
-                            .font(.system(size: 12))// rale 12
                     }
                 }
                 .padding(.horizontal,10)
+                .padding(.bottom,10)
             }
         }
-        .frame(width: 165, height: 192)
+        .onTapGesture {
+            print("go to products view ( product category: \(title)")
+        }
     }
 }
 
@@ -66,21 +70,23 @@ struct HomeCategoriesView: View {
                       action: { action() }) 
             .padding(.horizontal,20)
         
-        LazyVGrid(columns: [GridItem(.fixed(180)), GridItem(.fixed(180))], spacing: 20) {
+        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+            
             ForEach(chooseCategories, id: \.self) { item in
                 
                 switch item {
                 case .clothing : CategoryItems(images: clothing, title: "Clothing", count: "109")
-                case .bags: CategoryItems(images: bags, title: "Bags", count: "123")
+                case .bags: CategoryItems(images: bags, title: "Bags", count: "42")
                 case .watch: CategoryItems(images: watch, title: "Watch", count: "19")
                 case .shoes: CategoryItems(images: shoes, title: "Shoes", count: "98")
-                case .lingerie: CategoryItems(images: lingerie, title: "Lingerie", count: "65")
+                case .lingerie: CategoryItems(images: lingerie, title: "Lingerie", count: "69")
                 case .hoodies: CategoryItems(images: hoodies, title: "Hoodies", count: "78")
                 default: Text("OOOOoooppp's")
                 }
                 
             }
         }
+        .padding(.horizontal,20)
     }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -81,6 +81,10 @@
 		ADD726EC2D752F0A00B51792 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		ADD726EE2D752F1600B51792 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6C150A682D7759AE00D718DB /* HomeView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HomeView; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AD86807C2D74C1AF004C6D13 /* Frameworks */ = {
@@ -166,6 +170,7 @@
 		AD86809C2D74C599004C6D13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6C150A682D7759AE00D718DB /* HomeView */,
 				ADAB30A62D75680700D47FFD /* LaunchView */,
 				ADC9468C2D76E08300A58D2D /* ProductView */,
 			);
@@ -303,6 +308,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6C150A682D7759AE00D718DB /* HomeView */,
 			);
 			name = Shoppe;
 			packageProductDependencies = (

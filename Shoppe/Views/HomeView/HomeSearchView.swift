@@ -12,8 +12,8 @@ struct HomeSearchView: View {
     
     var body: some View {
         HStack {
-            Text("Shop") // raleway  28 bold
-                .font(.system(size: 28))
+            Text("Shop")
+                .applyFont(.raleway,.bold,28)
             Spacer(minLength: 25)
             ZStack(alignment: .leading) {
                 Capsule()

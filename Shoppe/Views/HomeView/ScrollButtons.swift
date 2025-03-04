@@ -15,7 +15,7 @@ struct ScrollButtons: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.system(size: 21)) // rele 21 med
+                .applyFont(.raleway,.bold,21)
             Spacer()
             if button {
                 Button {
@@ -23,12 +23,12 @@ struct ScrollButtons: View {
                 } label: {
                     HStack {
                         Text("See All")
-                            .font(.system(size: 15)) // rele 15 med
+                            .applyFont(.raleway,.bold,15)
                             .foregroundStyle(.black)
                         ZStack {
                             Circle()
                                 .frame(width:30)
-                                .foregroundStyle(.cyan) // Color
+                                .foregroundStyle(.mainBlue)
                             Image(systemName: "arrow.right")
                                 .resizable()
                                 .scaledToFit()

@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct HomeToolbar: View {
-    @Binding var userAdress: String             //"Salatiga City, Central Java"
+    @Binding var userAdress: String //"Salatiga City, Central Java"
     let adresses: [String]
     let cartItemsCount: Int
     
@@ -17,22 +17,22 @@ struct HomeToolbar: View {
         HStack {
             VStack(alignment: .leading, spacing: 3) {
                 Text("Delivery address")
-                    .font(.system(size: 10))                    //FONT
+                    .applyFont(.inter,.regular,10)
                     .foregroundStyle(.gray)
                 
                 Picker("choose adress", selection: $userAdress) {
                     ForEach(adresses, id: \.self) { adress in
                         HStack {
                             Text(adress)
-                                .font(.system(size: 12))          // font
+                                .applyFont(.inter,.regular,12)
                         }
                     }
                 }
+                .offset(x: -10) // ???
                 .ignoresSafeArea()
                 .pickerStyle(.menu)
             }
             Spacer()
-            //Cart
             Button {
                 // go to cart
                 print("go to cart view")
@@ -48,7 +48,8 @@ struct HomeToolbar: View {
                             .foregroundStyle(.red)
                         
                         Text(String(cartItemsCount))
-                            .font(.system(size: 8))          // font
+                            .font(.system(size: 8))
+                            .bold()
                             .foregroundStyle(.white)
                     }
                     .offset(x: 13, y: -13)

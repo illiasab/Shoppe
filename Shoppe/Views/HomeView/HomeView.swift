@@ -15,18 +15,24 @@ struct HomeView: View {
             HomeToolbar(userAdress: $homeVM.userAdress,
                         adresses: homeVM.adresses,
                         cartItemsCount: homeVM.cartItemsCount)
+        
             HomeSearchView(searchText: $homeVM.searchText)
         
-            ScrollView {
+        ScrollView(showsIndicators: false) {
                 
                 HomeCategoriesView(chooseCategories: homeVM.chooseCategories,
                                    action: {print("go to all categoriesView")})
                 
-                PopularProducts(action: { print("go to popularView")},
-                                products: homeVM.popularProducts)
+                PopularProducts(priceRegion: homeVM.priceRegion,
+                                products: homeVM.popularProducts,
+                                action: { print("go to popularView")})
                 
+                JustForYouView(priceRegion: homeVM.priceRegion,
+                               products: homeVM.justForYouProducts,
+                               addInCartaction: homeVM.addInCart,
+                               addInFavorites: homeVM.addInFavorit)
             }
-            
+            .padding(.bottom, 50)
     }
     
 }
