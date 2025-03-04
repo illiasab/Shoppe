@@ -11,7 +11,6 @@
 		AD0F694F2D76493B000CF5FB /* LaunchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */; };
 		AD0F69512D766119000CF5FB /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */; };
 		AD0F69542D766159000CF5FB /* OnboardingAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69532D766153000CF5FB /* OnboardingAssembly.swift */; };
-		AD0F69562D76618A000CF5FB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69552D766182000CF5FB /* OnboardingView.swift */; };
 		AD0F69582D7667BC000CF5FB /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69572D7667B2000CF5FB /* AuthCoordinator.swift */; };
 		AD0F695B2D76686C000CF5FB /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F695A2D766860000CF5FB /* AuthAssembly.swift */; };
 		AD0F695F2D766944000CF5FB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F695E2D766941000CF5FB /* SignUpView.swift */; };
@@ -57,6 +56,7 @@
 		ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30AE2D757DD100D47FFD /* Response.swift */; };
 		ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30B02D757E0400D47FFD /* HTTPError.swift */; };
 		ADD354602D77428A0041449D /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3545F2D77427D0041449D /* CoordinatorView.swift */; };
+		ADD354622D7776340041449D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD354612D7776340041449D /* OnboardingView.swift */; };
 		ADD726E42D752CB500B51792 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */; };
 		ADD726E72D752ED500B51792 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */; };
 		ADD726E92D752EEB00B51792 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */; };
@@ -73,7 +73,6 @@
 		AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAssembly.swift; sourceTree = "<group>"; };
 		AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		AD0F69532D766153000CF5FB /* OnboardingAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAssembly.swift; sourceTree = "<group>"; };
-		AD0F69552D766182000CF5FB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AD0F69572D7667B2000CF5FB /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		AD0F695A2D766860000CF5FB /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
 		AD0F695E2D766941000CF5FB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		ADAB30AE2D757DD100D47FFD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		ADAB30B02D757E0400D47FFD /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		ADD3545F2D77427D0041449D /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		ADD354612D7776340041449D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 		AD0F69522D766142000CF5FB /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
-				AD0F69552D766182000CF5FB /* OnboardingView.swift */,
 				AD0F69532D766153000CF5FB /* OnboardingAssembly.swift */,
+				ADD354612D7776340041449D /* OnboardingView.swift */,
 			);
 			path = OnboardingView;
 			sourceTree = "<group>";
@@ -521,6 +521,7 @@
 				AD0F69712D767AA8000CF5FB /* SignUpViewModel.swift in Sources */,
 				AD0F696F2D7679DB000CF5FB /* LoginViewModel.swift in Sources */,
 				AD0F69612D76694B000CF5FB /* LoginView.swift in Sources */,
+				ADD354622D7776340041449D /* OnboardingView.swift in Sources */,
 				AD0F69582D7667BC000CF5FB /* AuthCoordinator.swift in Sources */,
 				AD0F69652D7669B5000CF5FB /* LoginAssembly.swift in Sources */,
 				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
@@ -538,7 +539,6 @@
 				AD0F694F2D76493B000CF5FB /* LaunchAssembly.swift in Sources */,
 				AD0F69682D766B8C000CF5FB /* StartView.swift in Sources */,
 				AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */,
-				AD0F69562D76618A000CF5FB /* OnboardingView.swift in Sources */,
 				AD8680A22D751C7E004C6D13 /* Font.swift in Sources */,
 				AD0F69512D766119000CF5FB /* OnboardingCoordinator.swift in Sources */,
 				AD0F694C2D76396C000CF5FB /* AlertController.swift in Sources */,
