@@ -21,14 +21,19 @@ enum Constants {
     static let onboardingDescriptionSecond = "Find products instantly and save favorites for later."
     static let onboardingDescriptionThird = "Add to cart, choose payment, and order in seconds."
     static let onboardingDescriptionFourth = "Become a manager, add products, and control your catalog!"
+    static let okString = "OK"
+    static let start = "Let's get started"
+    static let haveAccount = "I already have an account"
+    static let signUp = "Create Account"
+    static let LogIn = "Login"
 }
 
 enum ImageName {
-   // Images
+    static let shoppeBag = "ShoppeBag"
 }
 
 enum SystemImageName {
- // System Images or Icons
+//
 }
 
 enum UserDefaultsKey {

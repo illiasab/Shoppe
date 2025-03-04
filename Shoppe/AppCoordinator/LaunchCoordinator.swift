@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol LaunchCoordinatorProtocol: Coordinator {
     func start()
@@ -18,6 +19,7 @@ final class LaunchCoordinator: LaunchCoordinatorProtocol {
     var childCoordinators: [Coordinator] = []
     var type: CoordinatorType { .launch }
     var dependencies: IDependencies
+    
     required init(_ navigationController: UINavigationController, dependencies: IDependencies) {
         self.navigationController = navigationController
         self.dependencies = dependencies
@@ -28,20 +30,28 @@ final class LaunchCoordinator: LaunchCoordinatorProtocol {
     }
     
     func startFirstLaunch() {
-        showLaunchViewController()
+        showLaunchViewController(isShowOnboardingBefore: false)
     }
     
     func showLaunchViewController(isShowOnboardingBefore: Bool = false) {
-//        let launchViewController = LaunchAssembly.configure(dependencies)
-//        if let launchView = launchView as? LaunchView {
-//            launchView.isShowOnboardingBefore = isShowOnboardingBefore
-//            launchView.didSendEventHandler = { [weak self] event in
-//                switch event {
-//                case .launchComplete:
-//                    self?.finish()
-//                }
-//            }
-//        }
-//        navigationController.show(launchView, sender: self)
+        let launchView = LaunchAssembly.configure(dependencies)
+
+        guard var launchView = launchView as? LaunchView else { return }
+
+        // Устанавливаем обработчик событий до начала анимации
+        launchView.didSendEventHandler = { [weak self] event in
+            switch event {
+            case .launchComplete:
+                print("🔄 Событие launchComplete получено")
+                self?.finish()
+            }
+        }
+
+        let hostingController = UIHostingController(rootView: launchView)
+
+        launchView.isShowOnboardingBefore = isShowOnboardingBefore
+
+        navigationController.pushViewController(hostingController, animated: true)
     }
+
 }
