@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct HomeToolbar: View {
-    @Binding var userAdress: String //"Salatiga City, Central Java"
+    @Binding var userAdress: String
     let adresses: [String]
     let cartItemsCount: Int
     
@@ -31,6 +31,8 @@ struct HomeToolbar: View {
                 .offset(x: -10) // ???
                 .ignoresSafeArea()
                 .pickerStyle(.menu)
+                .colorMultiply(.black)
+                
             }
             Spacer()
             Button {
