@@ -18,7 +18,7 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
     var childCoordinators: [Coordinator] = []
     var type: CoordinatorType { .auth }
     var dependencies: IDependencies
-    var onAuthSuccess: (() -> Void)?
+    var onAuthSuccess: Bool = false
     
     required init(_ navigationController: UINavigationController, dependencies: IDependencies) {
         self.navigationController = navigationController
@@ -28,13 +28,18 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
     func start() {
         showStartView()
     }
-    
+    //MARK: - Back To startView
+    private func goBackToStartView() {
+        navigationController.popViewController(animated: true)
+    }
+    //MARK: - MainAction
     private func showStartView() {
         var startView = AuthAssembly.configureStartView(dependencies)
         
         startView.onLoginTapped = { [weak self] in
             self?.showLoginView()
         }
+        
         
         startView.onSignUpTapped = { [weak self] in
             self?.showSignUpView()
@@ -43,12 +48,16 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
         let hostingController = UIHostingController(rootView: AnyView(startView))
         navigationController.pushViewController(hostingController, animated: true)
     }
-    
+
     private func showLoginView() {
         var loginView = AuthAssembly.configureLoginView(dependencies)
         loginView.onLoginSuccess = { [weak self] in
             self?.didAuthenticateUser()
         }
+        
+        loginView.onCancelTapped = { [weak self] in
+              self?.goBackToStartView()
+          }
         
         let hostingController = UIHostingController(rootView: AnyView(loginView))
         navigationController.pushViewController(hostingController, animated: true)
@@ -60,12 +69,16 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
         signUpView.onSignUpSuccess = { [weak self] in
             self?.didAuthenticateUser()
         }
+        signUpView.onCancelTapped = { [weak self] in
+               self?.goBackToStartView()
+           }
         
         let hostingController = UIHostingController(rootView: AnyView(signUpView))
         navigationController.pushViewController(hostingController, animated: true)
     }
     
     private func didAuthenticateUser() {
-        onAuthSuccess?()
+        onAuthSuccess = true
+        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
     }
 }

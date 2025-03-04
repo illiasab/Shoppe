@@ -7,7 +7,7 @@
 import UIKit
 
 enum CoordinatorType {
-    case app,launch, auth, onboarding, main
+    case app, launch, auth, onboarding, main
 }
 protocol Coordinator: AnyObject {
     var finishDelegate: CoordinatorFinishDelegate? { get }
@@ -21,6 +21,7 @@ protocol Coordinator: AnyObject {
 
 extension Coordinator {
     func finish() {
+        print("🛑 Завершаем LaunchCoordinator")
         childCoordinators.removeAll()
         finishDelegate?.coordinatorDidFinish(childCoordinator:self)
     }

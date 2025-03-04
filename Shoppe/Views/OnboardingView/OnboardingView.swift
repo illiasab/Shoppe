@@ -42,6 +42,7 @@ struct OnboardingView: View {
             .frame(height: 300)
             
             Button(action: {
+                print("✅ отправляем событие launchComplete")
                 didSendEventHandler?(.onboardingComplete)
             }) {
                 Text("Complete Onboarding")

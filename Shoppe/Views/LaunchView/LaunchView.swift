@@ -75,7 +75,7 @@ struct LaunchView: View {
     }
     
     private func triggerNextScreen() {
-        let delay: TimeInterval = isShowOnboardingBefore ? 1.0 : 1.5
+        let delay: TimeInterval = isShowOnboardingBefore ? 1.0 : 3.0
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             didSendEventHandler?(.launchComplete)  
         }

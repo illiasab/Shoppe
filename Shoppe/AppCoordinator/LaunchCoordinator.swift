@@ -4,6 +4,7 @@
 //
 //  Created by Ylyas Abdywahytow on 3/2/25.
 //
+
 import UIKit
 import SwiftUI
 
@@ -34,20 +35,23 @@ final class LaunchCoordinator: LaunchCoordinatorProtocol {
     
     func showLaunchViewController(isShowOnboardingBefore: Bool = false) {
         let launchView = LaunchAssembly.configure(dependencies)
-        
+
         guard var launchView = launchView as? LaunchView else { return }
+
+        // Устанавливаем обработчик событий до начала анимации
+        launchView.didSendEventHandler = { [weak self] event in
+            switch event {
+            case .launchComplete:
+                print("🔄 Событие launchComplete получено")
+                self?.finish()
+            }
+        }
 
         let hostingController = UIHostingController(rootView: launchView)
 
         launchView.isShowOnboardingBefore = isShowOnboardingBefore
 
-        launchView.didSendEventHandler = { [weak self] event in
-            switch event {
-            case .launchComplete:
-                self?.finish()
-            }
-        }
-        
         navigationController.pushViewController(hostingController, animated: true)
     }
+
 }

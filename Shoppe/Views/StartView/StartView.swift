@@ -21,7 +21,7 @@ struct StartView: View {
                         .frame(width: 134, height: 134)
                         .shadow(color: .black.opacity(0.16), radius: 4, x: 0, y: 3)
                 }
-                Image("ShoppeBag")
+                Image(ImageName.shoppeBag)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 81.4, height: 92)
@@ -32,10 +32,13 @@ struct StartView: View {
                 .padding(.top,24)
             
             VStack{
-                CustomButtonView(title:Constants.start , action: {})
+                CustomButtonView(title:Constants.start , action:{
+                    onSignUpTapped?()
+                })
+              
                
                     Button(action:{
-                        
+                        onLoginTapped?() 
                     })
                     {
                         HStack{

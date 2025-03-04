@@ -4,6 +4,7 @@
 //
 //  Created by Ylyas Abdywahytow on 3/3/25.
 //
+
 import UIKit
 import SwiftUI
 
@@ -31,18 +32,19 @@ final class OnboardingCoordinator: OnboardingCoordinatorProtocol {
         var hostingController: UIHostingController<OnboardingView>? = nil
 
         if var onboardView = onboardingView as? OnboardingView {
-            hostingController = UIHostingController(rootView: onboardView)
-            
             onboardView.didSendEventHandler = { [weak self] event in
                 switch event {
                 case .onboardingComplete:
                     self?.finish()
                 }
             }
+
+            hostingController = UIHostingController(rootView: onboardView)
         }
+
         if let hostingController = hostingController {
             navigationController.pushViewController(hostingController, animated: false)
         }
     }
-}
 
+}

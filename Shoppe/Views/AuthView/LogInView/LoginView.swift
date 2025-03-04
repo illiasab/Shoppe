@@ -10,9 +10,24 @@ import SwiftUI
 struct LoginView: View {
     var viewModel: LoginViewModelDelegate?
     var onLoginSuccess: (() -> Void)?
+    var onCancelTapped: (() -> Void)?
     var title = ""
     var body: some View {
-        Text("Log In")
+        VStack{
+            CustomButtonView(title: "Next", action: {
+                onLoginSuccess?()
+            })
+            
+            
+            Button(action: {
+                onCancelTapped?()
+            }) {
+                Text("Cancel")
+                    .applyFont(.raleway,.bold,15)
+                    .foregroundColor(.mainBlack)
+            }
+            .padding(.top,24)
+        }
     }
 }
 

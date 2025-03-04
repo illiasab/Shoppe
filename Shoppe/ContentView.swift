@@ -7,23 +7,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var dependencies: Dependencies
-    
-    @State private var appCoordinator: AppCoordinatorProtocol?
-    
-    var body: some View {
-        NavigationView {
-
-            
-            EmptyView()
-                .onAppear {
-                    if appCoordinator == nil {
-                        let navigationController = UINavigationController()
-                        appCoordinator = AppCoordinator(navigationController, dependencies: dependencies)
-                        appCoordinator?.start()
-                    }
-                }
-        }
+var body: some View {
+        Text("Hello, World!")
     }
 }
 
+#Preview {
+    ContentView()
+}

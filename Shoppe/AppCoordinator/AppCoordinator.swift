@@ -11,7 +11,7 @@ protocol AppCoordinatorProtocol: Coordinator {
     func start()
 }
 
-final class AppCoordinator: AppCoordinatorProtocol, ObservableObject {
+final class AppCoordinator: AppCoordinatorProtocol {
     weak var finishDelegate: CoordinatorFinishDelegate?
     var navigationController: UINavigationController
     var childCoordinators = [Coordinator]()
@@ -34,6 +34,11 @@ final class AppCoordinator: AppCoordinatorProtocol, ObservableObject {
         let launchCoordinator = LaunchCoordinator(navigationController, dependencies: dependencies)
         launchCoordinator.finishDelegate = self
         launchCoordinator.start()
+        if userDefaultsRepository.isOnboardingCompleteBefore {
+            launchCoordinator.start()
+        } else {
+            launchCoordinator.startFirstLaunch()
+        }
         childCoordinators.append(launchCoordinator)
     }
 
@@ -47,13 +52,10 @@ final class AppCoordinator: AppCoordinatorProtocol, ObservableObject {
     func showAuthFlow() {
         let authCoordinator = AuthCoordinator(navigationController, dependencies: dependencies)
         authCoordinator.finishDelegate = self
-        authCoordinator.onAuthSuccess = { [weak self] in
-            self?.showMainFlow()
-        }
         authCoordinator.start()
         childCoordinators.append(authCoordinator)
     }
-
+    
     func showMainFlow() {
         let mainCoordinator = MainCoordinator(navigationController, dependencies: dependencies)
         mainCoordinator.finishDelegate = self
@@ -68,15 +70,15 @@ extension AppCoordinator: CoordinatorFinishDelegate {
         
         switch childCoordinator.type {
         case .launch:
+            print("🚀 Завершён LaunchCoordinator. Запускаем OnboardingCoordinator")
             showOnboardingFlow()
         case .onboarding:
+            print("🚀 Завершён OnboardingCoordinator. Запускаем Auth/Main Coordinator")
             userDefaultsRepository.setOnboardingComplete()
             showAuthFlow()
         case .auth:
             showMainFlow()
-        default:
-            break
+        case .app, .main: break
         }
     }
 }
-

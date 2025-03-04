@@ -29,11 +29,11 @@ enum Constants {
 }
 
 enum ImageName {
-   // Images
+    static let shoppeBag = "ShoppeBag"
 }
 
 enum SystemImageName {
- // System Images or Icons
+//
 }
 
 enum UserDefaultsKey {
