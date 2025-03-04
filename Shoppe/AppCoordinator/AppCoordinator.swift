@@ -4,8 +4,8 @@
 //
 //  Created by Ylyas Abdywahytow on 3/2/25.
 //
-import UIKit
 
+import UIKit
 
 protocol AppCoordinatorProtocol: Coordinator {
     func start()
@@ -33,6 +33,7 @@ final class AppCoordinator: AppCoordinatorProtocol {
     func showLaunchFlow() {
         let launchCoordinator = LaunchCoordinator(navigationController, dependencies: dependencies)
         launchCoordinator.finishDelegate = self
+        launchCoordinator.start()
         if userDefaultsRepository.isOnboardingCompleteBefore {
             launchCoordinator.start()
         } else {
@@ -40,56 +41,44 @@ final class AppCoordinator: AppCoordinatorProtocol {
         }
         childCoordinators.append(launchCoordinator)
     }
+
+    func showOnboardingFlow() {
+        let onboardingCoordinator = OnboardingCoordinator(navigationController, dependencies: dependencies)
+        onboardingCoordinator.finishDelegate = self
+        onboardingCoordinator.start()
+        childCoordinators.append(onboardingCoordinator)
+    }
+
+    func showAuthFlow() {
+        let authCoordinator = AuthCoordinator(navigationController, dependencies: dependencies)
+        authCoordinator.finishDelegate = self
+        authCoordinator.start()
+        childCoordinators.append(authCoordinator)
+    }
     
-//    func showOnboardingFlow() {
-//        let onboardingCoordinator = OnboardingCoordinator(navigationController, dependencies: dependencies)
-//        onboardingCoordinator.finishDelegate = self
-//        onboardingCoordinator.start()
-//        childCoordinators.append(onboardingCoordinator)
-//    }
-    
-//    func showMainFlow() {
-//        let mainCoordinator = MainCoordinator(navigationController, dependencies: dependencies)
-//        mainCoordinator.finishDelegate = self
-//        mainCoordinator.start()
-//        childCoordinators.append(mainCoordinator)
-//    }
-    
-//    func showAuthFlow() {
-//        let authCoordinator = AuthCoordinator(navigationController, dependencies: dependencies)
-//        authCoordinator.finishDelegate = self
-//        childCoordinators.append(authCoordinator)
-//        
-//        if userDefaultsRepository.isRegistredUserBefore {
-//               authCoordinator.start()
-//        } else if userDefaultsRepository.isNotUserYet{
-//               authCoordinator.startRegister()
-//           }
-//    }
+    func showMainFlow() {
+        let mainCoordinator = MainCoordinator(navigationController, dependencies: dependencies)
+        mainCoordinator.finishDelegate = self
+        mainCoordinator.start()
+        childCoordinators.append(mainCoordinator)
+    }
 }
 
 extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
-        childCoordinators = childCoordinators.filter({ $0.type != childCoordinator.type })
+        childCoordinators = childCoordinators.filter { $0.type != childCoordinator.type }
+        
         switch childCoordinator.type {
         case .launch:
-            if userDefaultsRepository.isOnboardingCompleteBefore {
-//                showMainFlow()
-            } else {
-//                showOnboardingFlow()
-            }
+            print("🚀 Завершён LaunchCoordinator. Запускаем OnboardingCoordinator")
+            showOnboardingFlow()
         case .onboarding:
+            print("🚀 Завершён OnboardingCoordinator. Запускаем Auth/Main Coordinator")
             userDefaultsRepository.setOnboardingComplete()
-//            showAuthFlow()
-        case .app, .main: break
+            showAuthFlow()
         case .auth:
-            if userDefaultsRepository.isRegistredUserBefore && userDefaultsRepository.isAuthenticatedUser {
-//                showMainFlow()
-            } else if userDefaultsRepository.isRegistredUserBefore && !userDefaultsRepository.isAuthenticatedUser  {
-//                showAuthFlow()
-            } else {
-//                showAuthFlow()
-            }
+            showMainFlow()
+        case .app, .main: break
         }
     }
 }

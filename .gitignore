@@ -1,0 +1,43 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# macOS system files
+.DS_Store
+
+# Xcode user data
+xcuserdata/
+*.xcuserstate
+
+# Xcode project workspace settings
+Shoppe.xcodeproj/project.xcworkspace/xcuserdata/
+Shoppe.xcodeproj/xcuserdata/
+
+# Xcode build files
+*.hmap
+.build/
+DerivedData/
+*.xcworkspace/
+
+# App packaging files
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# CocoaPods (if used)
+Pods/
+
+# Ignore scheme management (Xcode specific)
+Shoppe.xcodeproj/xcuserdata/daniilpavlenko.xcuserdatad/xcschemes/xcschememanagement.plist
