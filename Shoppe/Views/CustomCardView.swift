@@ -18,7 +18,7 @@ struct CustomCardView: View {
                 .scaledToFit()
                 .cornerRadius(10)
                 .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.white, lineWidth: 2))
+                .stroke(Color.white, lineWidth: 4))
                 .shadow(color: .gray.opacity(0.4), radius: 5, x: 0, y: 2)
             
             Text(product.name)
@@ -54,8 +54,7 @@ struct CustomCardView: View {
         }
         .padding(.top, 10)
         .background(RoundedRectangle(cornerRadius: 10)
-        .fill(Color.white)
-        .shadow(radius: 3))
+        .fill(Color.white))
     }
 }
 
