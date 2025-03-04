@@ -25,7 +25,7 @@ struct HomeView: View {
                 
                 PopularProducts(priceRegion: homeVM.priceRegion,
                                 products: homeVM.popularProducts,
-                                action: { print("go to popularView")})
+                                action: { print("go to popularView")}, priceTransform: {})
                 
                 JustForYouView(priceRegion: homeVM.priceRegion,
                                products: homeVM.justForYouProducts,

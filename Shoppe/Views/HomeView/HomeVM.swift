@@ -46,5 +46,15 @@ class HomeViewModel: ObservableObject {
         print("add in favorit")
     }
 
+    func priceTransform( price: Double) -> Double {
+        
+        switch userAdress {
+        case "Russia, Moscow": return price * 90
+        case "England, Manchester": return price * 0.90
+        default:
+           return price
+        }
+       
+    }
     
 }

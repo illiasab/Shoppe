@@ -11,6 +11,7 @@ struct PopularProducts: View {
     let priceRegion: String
     let products: [Product]
     let action: () -> Void
+    let priceTransform: () -> Void
     
     var body: some View {
         VStack(spacing: 5) {
@@ -63,5 +64,5 @@ struct PopularProducts: View {
 }
 
 #Preview {
-    PopularProducts(priceRegion: "EUR", products: [Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: ""), Product(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {})
+    PopularProducts(priceRegion: "EUR", products: [Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: ""), Product(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {}, priceTransform: {})
 }
