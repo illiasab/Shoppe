@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopularProducts: View {
     let priceRegion: String
-    let products: [Product]
+    let products: [ProductMock]
     let action: () -> Void
     
     var body: some View {
@@ -62,5 +62,5 @@ struct PopularProducts: View {
 }
 
 #Preview {
-    PopularProducts(priceRegion: "EUR", products: [Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: ""), Product(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {})
+    PopularProducts(priceRegion: "EUR", products: [ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: ""), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {})
 }

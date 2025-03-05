@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product {
+struct ProductMock {
     let id = UUID()
     let title: String
     let price: String

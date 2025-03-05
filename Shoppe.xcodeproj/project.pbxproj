@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD84B2152D78C54A0006DD6C /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B20A2D78C54A0006DD6C /* CustomSearchBar.swift */; };
+		AD84B2162D78C54A0006DD6C /* HomeCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B20B2D78C54A0006DD6C /* HomeCategoriesView.swift */; };
+		AD84B2172D78C54A0006DD6C /* HomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B20C2D78C54A0006DD6C /* HomeSearchView.swift */; };
+		AD84B2182D78C54A0006DD6C /* HomeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B20D2D78C54A0006DD6C /* HomeToolbar.swift */; };
+		AD84B2192D78C54A0006DD6C /* HomeViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B20E2D78C54A0006DD6C /* HomeViewMock.swift */; };
+		AD84B21A2D78C54A0006DD6C /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B20F2D78C54A0006DD6C /* HomeVM.swift */; };
+		AD84B21B2D78C54A0006DD6C /* JustForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B2102D78C54A0006DD6C /* JustForYouView.swift */; };
+		AD84B21C2D78C54A0006DD6C /* PopularProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B2112D78C54A0006DD6C /* PopularProducts.swift */; };
+		AD84B21D2D78C54A0006DD6C /* ProductMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B2122D78C54A0006DD6C /* ProductMock.swift */; };
+		AD84B21E2D78C54A0006DD6C /* ScrollButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84B2132D78C54A0006DD6C /* ScrollButtons.swift */; };
 		AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680932D74C1C1004C6D13 /* ContentView.swift */; };
 		AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680942D74C1C1004C6D13 /* ShoppeApp.swift */; };
 		AD8680982D74C1C1004C6D13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */; };
@@ -46,6 +56,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD84B20A2D78C54A0006DD6C /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		AD84B20B2D78C54A0006DD6C /* HomeCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoriesView.swift; sourceTree = "<group>"; };
+		AD84B20C2D78C54A0006DD6C /* HomeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchView.swift; sourceTree = "<group>"; };
+		AD84B20D2D78C54A0006DD6C /* HomeToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeToolbar.swift; sourceTree = "<group>"; };
+		AD84B20E2D78C54A0006DD6C /* HomeViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewMock.swift; sourceTree = "<group>"; };
+		AD84B20F2D78C54A0006DD6C /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		AD84B2102D78C54A0006DD6C /* JustForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustForYouView.swift; sourceTree = "<group>"; };
+		AD84B2112D78C54A0006DD6C /* PopularProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProducts.swift; sourceTree = "<group>"; };
+		AD84B2122D78C54A0006DD6C /* ProductMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMock.swift; sourceTree = "<group>"; };
+		AD84B2132D78C54A0006DD6C /* ScrollButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollButtons.swift; sourceTree = "<group>"; };
 		AD86807F2D74C1AF004C6D13 /* Shoppe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shoppe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD8680922D74C1C1004C6D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,10 +102,6 @@
 		ADD726EE2D752F1600B51792 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		6C150A682D7759AE00D718DB /* HomeView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HomeView; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		AD86807C2D74C1AF004C6D13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -101,6 +117,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD84B2142D78C54A0006DD6C /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				AD84B20A2D78C54A0006DD6C /* CustomSearchBar.swift */,
+				AD84B20B2D78C54A0006DD6C /* HomeCategoriesView.swift */,
+				AD84B20C2D78C54A0006DD6C /* HomeSearchView.swift */,
+				AD84B20D2D78C54A0006DD6C /* HomeToolbar.swift */,
+				AD84B20E2D78C54A0006DD6C /* HomeViewMock.swift */,
+				AD84B20F2D78C54A0006DD6C /* HomeVM.swift */,
+				AD84B2102D78C54A0006DD6C /* JustForYouView.swift */,
+				AD84B2112D78C54A0006DD6C /* PopularProducts.swift */,
+				AD84B2122D78C54A0006DD6C /* ProductMock.swift */,
+				AD84B2132D78C54A0006DD6C /* ScrollButtons.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		AD8680762D74C1AF004C6D13 = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +203,7 @@
 		AD86809C2D74C599004C6D13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6C150A682D7759AE00D718DB /* HomeView */,
+				AD84B2142D78C54A0006DD6C /* HomeView */,
 				ADAB30A62D75680700D47FFD /* LaunchView */,
 				ADC9468C2D76E08300A58D2D /* ProductView */,
 			);
@@ -309,9 +342,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				6C150A682D7759AE00D718DB /* HomeView */,
-			);
 			name = Shoppe;
 			packageProductDependencies = (
 				ADAB30992D7540EA00D47FFD /* CombineMoya */,
@@ -396,6 +426,16 @@
 				ADAB30A52D75481A00D47FFD /* ModuleContainer.swift in Sources */,
 				ADAB308D2D753B8900D47FFD /* AppCoordinator.swift in Sources */,
 				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
+				AD84B2152D78C54A0006DD6C /* CustomSearchBar.swift in Sources */,
+				AD84B2162D78C54A0006DD6C /* HomeCategoriesView.swift in Sources */,
+				AD84B2172D78C54A0006DD6C /* HomeSearchView.swift in Sources */,
+				AD84B2182D78C54A0006DD6C /* HomeToolbar.swift in Sources */,
+				AD84B2192D78C54A0006DD6C /* HomeViewMock.swift in Sources */,
+				AD84B21A2D78C54A0006DD6C /* HomeVM.swift in Sources */,
+				AD84B21B2D78C54A0006DD6C /* JustForYouView.swift in Sources */,
+				AD84B21C2D78C54A0006DD6C /* PopularProducts.swift in Sources */,
+				AD84B21D2D78C54A0006DD6C /* ProductMock.swift in Sources */,
+				AD84B21E2D78C54A0006DD6C /* ScrollButtons.swift in Sources */,
 				AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */,
 				ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */,
 				ADAB30AA2D75793500D47FFD /* UserDefaultsRepository.swift in Sources */,

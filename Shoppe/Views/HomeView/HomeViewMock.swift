@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @StateObject var homeVM = HomeViewModel()
+struct HomeViewMock: View {
+    @StateObject var homeVM = HomeViewModelMock()
     
     var body: some View {
         
@@ -38,5 +38,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeViewMock()
 }
