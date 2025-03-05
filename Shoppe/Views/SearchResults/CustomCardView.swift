@@ -25,12 +25,12 @@ struct CustomCardView: View {
                 .applyFont(.nunitoSans, .regular, 12)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .multilineTextAlignment(.leading)
-                .padding(.top, 5)
+                .padding(.top, 4)
             
             Text(product.price)
                 .applyFont(.raleway, .bold, 17)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 6)
+                .padding(.top, 5)
             
             HStack {
                 Button(action: {}) {
@@ -43,7 +43,7 @@ struct CustomCardView: View {
                         .cornerRadius(8)
                 }
                 
-                Spacer()
+               // Spacer()
                 Button(action: {isFavourite.toggle()}) {
                     Image(systemName: isFavourite ? "heart.fill" : "heart")
                         .font(.system(size: 24))

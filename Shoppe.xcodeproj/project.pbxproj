@@ -66,6 +66,7 @@
 		B50604F22D75DDFF00AA0F4D /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50604F12D75DDFF00AA0F4D /* SearchResultsView.swift */; };
 		B506056F2D76139600AA0F4D /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506056E2D76139600AA0F4D /* BottomNavigationBar.swift */; };
 		B50605712D76142F00AA0F4D /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50605702D76142F00AA0F4D /* CustomCardView.swift */; };
+		B506057E2D7834BC00AA0F4D /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506057D2D7834B200AA0F4D /* WishListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		B50604F12D75DDFF00AA0F4D /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
 		B506056E2D76139600AA0F4D /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
 		B50605702D76142F00AA0F4D /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
+		B506057D2D7834B200AA0F4D /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,9 +286,8 @@
 				AD0F69522D766142000CF5FB /* OnboardingView */,
 				ADAB30A62D75680700D47FFD /* LaunchView */,
 				AD0F69782D76D0CB000CF5FB /* CustomButtonView */,
-				B50604F12D75DDFF00AA0F4D /* SearchResultsView.swift */,
-				B506056E2D76139600AA0F4D /* BottomNavigationBar.swift */,
-				B50605702D76142F00AA0F4D /* CustomCardView.swift */,
+				B506057A2D7833F600AA0F4D /* SearchResults */,
+				B506057C2D78347500AA0F4D /* WishList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +415,24 @@
 			path = AppCoordinator;
 			sourceTree = "<group>";
 		};
+		B506057A2D7833F600AA0F4D /* SearchResults */ = {
+			isa = PBXGroup;
+			children = (
+				B506056E2D76139600AA0F4D /* BottomNavigationBar.swift */,
+				B50605702D76142F00AA0F4D /* CustomCardView.swift */,
+				B50604F12D75DDFF00AA0F4D /* SearchResultsView.swift */,
+			);
+			path = SearchResults;
+			sourceTree = "<group>";
+		};
+		B506057C2D78347500AA0F4D /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				B506057D2D7834B200AA0F4D /* WishListView.swift */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -523,6 +542,7 @@
 				AD0F69612D76694B000CF5FB /* LoginView.swift in Sources */,
 				ADD354622D7776340041449D /* OnboardingView.swift in Sources */,
 				AD0F69582D7667BC000CF5FB /* AuthCoordinator.swift in Sources */,
+				B506057E2D7834BC00AA0F4D /* WishListView.swift in Sources */,
 				AD0F69652D7669B5000CF5FB /* LoginAssembly.swift in Sources */,
 				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
 				AD0F696D2D7677A3000CF5FB /* HomeView.swift in Sources */,
