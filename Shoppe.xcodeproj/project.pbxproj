@@ -57,6 +57,12 @@
 		ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB30B02D757E0400D47FFD /* HTTPError.swift */; };
 		ADD354602D77428A0041449D /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3545F2D77427D0041449D /* CoordinatorView.swift */; };
 		ADD354622D7776340041449D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD354612D7776340041449D /* OnboardingView.swift */; };
+		ADD354642D7786560041449D /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD354632D7786480041449D /* CustomTextFieldView.swift */; };
+		ADD354662D7813730041449D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD354652D7813690041449D /* Products.swift */; };
+		ADD354682D7819BA0041449D /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD354672D7819B50041449D /* ProductService.swift */; };
+		ADD3546A2D781B620041449D /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD354692D781B550041449D /* Codable+Extensions.swift */; };
+		ADD3546C2D781D6D0041449D /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3546B2D781D600041449D /* OperationQueue.swift */; };
+		ADD3546E2D7822D40041449D /* Log+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD3546D2D7822C50041449D /* Log+Extension.swift */; };
 		ADD726E42D752CB500B51792 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */; };
 		ADD726E72D752ED500B51792 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */; };
 		ADD726E92D752EEB00B51792 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */; };
@@ -117,6 +123,12 @@
 		ADAB30B02D757E0400D47FFD /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		ADD3545F2D77427D0041449D /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		ADD354612D7776340041449D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		ADD354632D7786480041449D /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		ADD354652D7813690041449D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		ADD354672D7819B50041449D /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		ADD354692D781B550041449D /* Codable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extensions.swift"; sourceTree = "<group>"; };
+		ADD3546B2D781D600041449D /* OperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		ADD3546D2D7822C50041449D /* Log+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+Extension.swift"; sourceTree = "<group>"; };
 		ADD726E32D752CB500B51792 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		ADD726E62D752ED500B51792 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		ADD726E82D752EEB00B51792 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -203,6 +215,7 @@
 		AD0F69782D76D0CB000CF5FB /* CustomButtonView */ = {
 			isa = PBXGroup;
 			children = (
+				ADD354632D7786480041449D /* CustomTextFieldView.swift */,
 				AD0F69792D76D0D7000CF5FB /* CustomButtonView.swift */,
 			);
 			path = CustomButtonView;
@@ -294,6 +307,7 @@
 		AD86809D2D74C5A4004C6D13 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ADD354672D7819B50041449D /* ProductService.swift */,
 				AD0F69722D767BA4000CF5FB /* AuthService.swift */,
 				ADAB30A92D75792300D47FFD /* UserDefaultsRepository.swift */,
 			);
@@ -303,6 +317,7 @@
 		AD86809E2D74C5AF004C6D13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ADD354652D7813690041449D /* Products.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +389,9 @@
 		ADAB30AD2D757D8E00D47FFD /* Errors */ = {
 			isa = PBXGroup;
 			children = (
+				ADD3546D2D7822C50041449D /* Log+Extension.swift */,
+				ADD3546B2D781D600041449D /* OperationQueue.swift */,
+				ADD354692D781B550041449D /* Codable+Extensions.swift */,
 				ADAB30B02D757E0400D47FFD /* HTTPError.swift */,
 				ADAB30AE2D757DD100D47FFD /* Response.swift */,
 			);
@@ -511,7 +529,10 @@
 				AD0F697A2D76D0DF000CF5FB /* CustomButtonView.swift in Sources */,
 				ADAB30952D753EBE00D47FFD /* Dependencies.swift in Sources */,
 				AD0F696A2D7676FA000CF5FB /* MainCoordinator.swift in Sources */,
+				ADD354642D7786560041449D /* CustomTextFieldView.swift in Sources */,
 				AD0F695B2D76686C000CF5FB /* AuthAssembly.swift in Sources */,
+				ADD3546A2D781B620041449D /* Codable+Extensions.swift in Sources */,
+				ADD354682D7819BA0041449D /* ProductService.swift in Sources */,
 				AD0F69752D768300000CF5FB /* HomeAssembly.swift in Sources */,
 				ADAB30A82D75681800D47FFD /* LaunchView.swift in Sources */,
 				AD0F69632D7669A6000CF5FB /* SignUpAssembly.swift in Sources */,
@@ -534,7 +555,9 @@
 				B506056F2D76139600AA0F4D /* BottomNavigationBar.swift in Sources */,
 				ADAB30AA2D75793500D47FFD /* UserDefaultsRepository.swift in Sources */,
 				ADAB30AC2D757A0700D47FFD /* Constants.swift in Sources */,
+				ADD3546C2D781D6D0041449D /* OperationQueue.swift in Sources */,
 				AD0F69542D766159000CF5FB /* OnboardingAssembly.swift in Sources */,
+				ADD3546E2D7822D40041449D /* Log+Extension.swift in Sources */,
 				ADAB308F2D753C2700D47FFD /* Coordinator.swift in Sources */,
 				AD0F694F2D76493B000CF5FB /* LaunchAssembly.swift in Sources */,
 				AD0F69682D766B8C000CF5FB /* StartView.swift in Sources */,
@@ -543,6 +566,7 @@
 				AD0F69512D766119000CF5FB /* OnboardingCoordinator.swift in Sources */,
 				AD0F694C2D76396C000CF5FB /* AlertController.swift in Sources */,
 				B50604F22D75DDFF00AA0F4D /* SearchResultsView.swift in Sources */,
+				ADD354662D7813730041449D /* Products.swift in Sources */,
 				ADAB30A32D7541A900D47FFD /* ShoppeEndpoint.swift in Sources */,
 				ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */,
 				ADAB30922D753D9900D47FFD /* LaunchCoordinator.swift in Sources */,

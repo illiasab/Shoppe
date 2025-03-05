@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-struct HomeView: View{
+import SwiftUI
+
+struct HomeView: View {
     var viewModel: HomeViewModel?
-    var body: some View{
-        Text("Hello World")
+    
+    var body: some View {
+        VStack {
+        }
     }
+    
 }
-
-
-#Preview{
+#Preview {
     HomeView()
 }
