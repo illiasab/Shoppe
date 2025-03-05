@@ -12,6 +12,7 @@ struct JustForYouView: View {
     let products: [Product]
     let addInCartaction: () -> Void
     let addInFavorites: () -> Void
+    let priceTransform: (String) -> Double
     
     var body: some View {
         ScrollButtons(title: "Just For You", button: false, action: {})
@@ -45,7 +46,7 @@ struct JustForYouView: View {
                         print("go to productinfo view ( product id: \(product.id)")
                     }
                     HStack {
-                        Text("\(Double(product.price) ?? 0.00, format: .currency(code: priceRegion))")
+                        Text("\(priceTransform(product.price), format: .currency(code: priceRegion))")
                             .applyFont(.raleway,.bold,17)
                         Spacer()
                         Button {
@@ -74,10 +75,10 @@ struct JustForYouView: View {
             }
         }
         .padding(.horizontal, 20)
-        .padding(.bottom,50)
+        .padding(.bottom,100) // for tabbar
     }
 }
 
-#Preview {
-    JustForYouView(priceRegion: "RUR", products: [Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur")], addInCartaction: {print("in cart")}, addInFavorites: {print("in favorit")})
-}
+//#Preview {
+//    JustForYouView(priceRegion: "RUR", products: [Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur")], addInCartaction: {print("in cart")}, addInFavorites: {print("in favorit")}, priceTransform:  { _ in return 0.0 })
+//}

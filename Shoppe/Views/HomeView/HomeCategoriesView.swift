@@ -18,7 +18,7 @@ struct CategoryItems: View {
             RoundedRectangle(cornerRadius: 9)
                 .shadow(color: .gray.opacity(0.4), radius: 5, x: 0, y: 2)
                 .foregroundStyle(.white)
-                
+            
             VStack(spacing: 5) {
                 LazyVGrid (columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 0) {
                     ForEach(images, id: \.self) { item in
@@ -67,8 +67,8 @@ struct HomeCategoriesView: View {
         
         ScrollButtons(title: "Categories",
                       button: true,
-                      action: { action() }) 
-            .padding(.horizontal,20)
+                      action: { action() })
+        .padding(.horizontal,20)
         
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
             

@@ -11,7 +11,7 @@ struct PopularProducts: View {
     let priceRegion: String
     let products: [Product]
     let action: () -> Void
-    let priceTransform: () -> Void
+    let priceTransform: (String) -> Double
     
     var body: some View {
         VStack(spacing: 5) {
@@ -49,7 +49,7 @@ struct PopularProducts: View {
                                     .lineLimit(2)
                                     .frame(height: 30)
                                 
-                                Text("\(Double(product.price) ?? 0.00, format: .currency(code: priceRegion))")
+                                Text("\(priceTransform(product.price), format: .currency(code: priceRegion))")
                                     .applyFont(.raleway,.bold,17)
                             }
                             .frame(width: 140)
@@ -63,6 +63,6 @@ struct PopularProducts: View {
     }
 }
 
-#Preview {
-    PopularProducts(priceRegion: "EUR", products: [Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: ""), Product(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {}, priceTransform: {})
-}
+//#Preview {
+//    PopularProducts(priceRegion: "EUR", products: [Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: ""), Product(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {}, priceTransform: { _ in return 0.0 })
+//}

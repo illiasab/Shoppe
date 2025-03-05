@@ -12,26 +12,32 @@ struct HomeView: View {
     
     var body: some View {
         
-            HomeToolbar(userAdress: $homeVM.userAdress,
-                        adresses: homeVM.adresses,
-                        cartItemsCount: homeVM.cartItemsCount)
+        HomeToolbar(userAdress: $homeVM.userAdress,
+                    adresses: homeVM.adresses,
+                    cartItemsCount: homeVM.cartItemsCount)
         
-            HomeSearchView(searchText: $homeVM.searchText)
+        HomeSearchView(searchText: $homeVM.searchText)
         
         ScrollView(showsIndicators: false) {
-                
-                HomeCategoriesView(chooseCategories: homeVM.chooseCategories,
-                                   action: {print("go to all categoriesView")})
-                
-                PopularProducts(priceRegion: homeVM.priceRegion,
-                                products: homeVM.popularProducts,
-                                action: { print("go to popularView")}, priceTransform: {})
-                
-                JustForYouView(priceRegion: homeVM.priceRegion,
-                               products: homeVM.justForYouProducts,
-                               addInCartaction: homeVM.addInCart,
-                               addInFavorites: homeVM.addInFavorit)
+            
+            HomeCategoriesView(chooseCategories: homeVM.chooseCategories,
+                               action: {print("go to all categoriesView")})
+            
+            PopularProducts(priceRegion: homeVM.priceRegion,
+                            products: homeVM.popularProducts,
+                            action: { print("go to popularView")}, priceTransform: homeVM.priceTransform)
+            
+            JustForYouView(priceRegion: homeVM.priceRegion,
+                           products: homeVM.justForYouProducts,
+                           addInCartaction: homeVM.addInCart,
+                           addInFavorites: homeVM.addInFavorit,
+                           priceTransform: homeVM.priceTransform)
+        }
+        .onAppear {
+            Task {
+                await homeVM.updateCurrency()
             }
+        }
     }
     
 }
