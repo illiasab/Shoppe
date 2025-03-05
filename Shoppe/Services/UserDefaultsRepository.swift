@@ -12,7 +12,9 @@ protocol IUserDefaultsRepository {
     var isRegistredUserBefore: Bool { get }
     var isAuthenticatedUser: Bool {get }
     var isNotUserYet: Bool { get }
+    func saveSelectedCategory (_ category: String?)
     func setOnboardingComplete()
+    func getSelectedCategory() -> String?
 }
 
 struct UserDefaultsRepository: IUserDefaultsRepository {
@@ -33,6 +35,14 @@ struct UserDefaultsRepository: IUserDefaultsRepository {
     }
     var isNotUserYet: Bool {
         return container.bool(forKey: UserDefaultsKey.isNotUser)
+    }
+    
+   func saveSelectedCategory(_ category: String?) {
+       container.set(category, forKey: UserDefaultsKey.selectedCategory)
+    }
+    
+    func getSelectedCategory() -> String? {
+        return container.string(forKey: UserDefaultsKey.selectedCategory)
     }
     
    

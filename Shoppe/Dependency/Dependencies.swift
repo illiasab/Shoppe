@@ -14,6 +14,7 @@ protocol IDependencies {
     var networkService: IHTTPClient { get }
     var alertBuilder: IAlertsBuilder { get }
     var authService: IAuthService { get }
+    var myProductService: IProductService { get }
 }
 
 
@@ -23,4 +24,5 @@ final class Dependencies: IDependencies, ObservableObject{
     lazy var networkService:IHTTPClient = HTTPClient()
     lazy var alertBuilder: IAlertsBuilder = AlertsBuilder()
     lazy var authService: IAuthService = AuthService()
+    lazy var myProductService: IProductService = ProductService(self)
 }

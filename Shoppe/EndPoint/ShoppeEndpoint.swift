@@ -38,32 +38,40 @@ extension ShoppeEndpoint: TargetType {
         case .auth: return "login"
         }
     }
+    
     var method: Moya.Method {
-        return .get
-    }
-    var postMethod: Moya.Method {
-        return .post
-    }
-    var putMethod: Moya.Method {
-        return .put
-    }
-    var deleteMethod: Moya.Method {
-        return .delete
-    }
-    var sampleData: Data {
-        return Data()
-    }
+          switch self {
+          case .products, .carts, .users: return .get
+          case .productsByid, .cartsByid, .usersByid: return .get
+          case .auth: return .post
+          }
+      }
+    
     var task: Task {
-        switch self {
-       case .products, .productsByid, .carts, .cartsByid, .users, .usersByid:
+           switch self {
+           case .products, .productsByid, .carts, .cartsByid, .users, .usersByid:
                return .requestPlain
-            
-        case .auth:
-            let parameters: [String: Any] = ["username": "test_user", "password": "test_password"]
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        }
-    }
-    var headers: [String: String]? {
+           case .auth:
+               let parameters: [String: Any] = ["username": "test_user", "password": "test_password"]
+               return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+           }
+       }
+        var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
+    
+    var additionalMethod: Moya.Method? {
+            switch self {
+            case .products, .carts, .users: return .post
+            case .productsByid, .cartsByid, .usersByid: return .put
+            default: return nil
+            }
+        }
+        
+        var deleteMethod: Moya.Method? {
+            switch self {
+            case .productsByid, .cartsByid, .usersByid: return .delete
+            default: return nil
+            }
+        }
 }
