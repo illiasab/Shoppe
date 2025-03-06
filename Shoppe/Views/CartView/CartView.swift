@@ -9,17 +9,49 @@ import SwiftUI
 
 struct CartView: View {
 
-	let cartItems: [CartModel] = [
-		CartModel(
-			image: "shoe_image",
+	@State var cartItems: [ProductModel] = [
+		ProductModel(
+			image: "pinkSkirt",
 			description: "Nike Running Shoes",
 			numberOfItems: 2,
 			color: "Black",
 			size: "42",
 			price: 99.99
 		),
-		CartModel(
-			image: "tshirt_image",
+		ProductModel(
+			image: "pinkSkirt",
+			description: "Cotton T-Shirt",
+			numberOfItems: 1,
+			color: "White",
+			size: "M",
+			price: 19.99
+		),
+		ProductModel(
+			image: "pinkSkirt",
+			description: "Nike Running Shoes",
+			numberOfItems: 2,
+			color: "Black",
+			size: "42",
+			price: 99.99
+		),
+		ProductModel(
+			image: "pinkSkirt",
+			description: "Cotton T-Shirt",
+			numberOfItems: 1,
+			color: "White",
+			size: "M",
+			price: 19.99
+		),
+		ProductModel(
+			image: "pinkSkirt",
+			description: "Nike Running Shoes",
+			numberOfItems: 2,
+			color: "Black",
+			size: "42",
+			price: 99.99
+		),
+		ProductModel(
+			image: "pinkSkirt",
 			description: "Cotton T-Shirt",
 			numberOfItems: 1,
 			color: "White",
@@ -42,8 +74,13 @@ struct CartView: View {
 			.padding()
 			AddressView(address: $address)
 			ScrollView {
-				
+				ForEach($cartItems, id: \.self) { $item in
+					CartProductView(product: $item, deleteAction: {print("Delete tapped!")})
+				}
 			}
+			.scrollBounceBehavior(.basedOnSize)
+			.scrollIndicators(.hidden)
+			.padding(.horizontal)
 		}
 
     }
