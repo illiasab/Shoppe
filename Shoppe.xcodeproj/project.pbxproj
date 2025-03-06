@@ -581,6 +581,7 @@
 				ADD354662D7813730041449D /* Products.swift in Sources */,
 				ADAB30A32D7541A900D47FFD /* ShoppeEndpoint.swift in Sources */,
 				ADAB30B12D757E0A00D47FFD /* HTTPError.swift in Sources */,
+				4ABAA3E62D76567C00F17D4D /* AllCategoriesModel.swift in Sources */,
 				ADAB30922D753D9900D47FFD /* LaunchCoordinator.swift in Sources */,
 				B50605712D76142F00AA0F4D /* CustomCardView.swift in Sources */,
 			);
