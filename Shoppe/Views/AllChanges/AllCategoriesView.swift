@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AllChangesView: View {
+struct AllCategoriesView: View {
 
 	let categories = [
 		CategoryItem(title: "Clothing", imageName: "Placeholder1", items: ["Dresses", "Pants", "Skirt", "Grape"]),
@@ -102,5 +102,5 @@ struct AllChangesView: View {
 }
 
 #Preview {
-    AllChangesView()
+    AllCategoriesView()
 }
