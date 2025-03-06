@@ -21,14 +21,26 @@ enum Constants {
     static let onboardingDescriptionSecond = "Find products instantly and save favorites for later."
     static let onboardingDescriptionThird = "Add to cart, choose payment, and order in seconds."
     static let onboardingDescriptionFourth = "Become a manager, add products, and control your catalog!"
+    static let okString = "OK"
+    static let start = "Let's get started"
+    static let haveAccount = "I already have an account"
+    static let signUp = "Create Account"
+    static let LogIn = "Login"
+    static let LogInSubTitle = "Good to see you back!"
 }
 
 enum ImageName {
-   // Images
+    static let shoppeBag = "ShoppeBag"
+    static let  blueBuble = "bubble1"
+    static let grayBubble = "bubble2"
+    static let signUpBlueBubble = "blueAuthBubble"
+    static let miniBlueBubble = "miniBlueBubble"
+    static let grayLogBubble = "grayLogBubble"
+    
 }
 
 enum SystemImageName {
- // System Images or Icons
+//
 }
 
 enum UserDefaultsKey {
@@ -36,6 +48,7 @@ enum UserDefaultsKey {
     static let isRegistredUser = "RegistraitedUser"
     static let isAuthUser = "UserAuthed"
     static let isNotUser = "RegistrationNeeded"
+    static let selectedCategory = "selectedCategory"
 }
 
 enum CoreDataConstant {

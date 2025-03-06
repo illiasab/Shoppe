@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct ShoppeApp: App {
+    @StateObject var dependencies = Dependencies()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoordinatorView(dependencies: dependencies)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
+
+
+
+
+
+
+
+

@@ -36,3 +36,31 @@ struct HTTPClient: IHTTPClient {
         }
     }
 }
+
+
+// MARK: - Retry Fallback
+extension IHTTPClient {
+    func retry(_ retryCount: UInt) -> IHTTPClient {
+        var service: IHTTPClient = self
+        for _ in 0..<retryCount {
+            service = service.fallback(self)
+        }
+        return service
+    }
+    private func fallback(_ fallback: IHTTPClient) -> IHTTPClient {
+        IHTTPServiceWithFallback(primary: self, fallback: fallback)
+    }
+}
+
+private struct IHTTPServiceWithFallback: IHTTPClient {
+    let primary: IHTTPClient
+    let fallback: IHTTPClient
+    func request(target:ShoppeEndpoint, completion: @escaping (HTTPResult) -> Void) {
+        primary.request(target: target) { result in
+            switch result {
+            case .success: completion(result)
+            case .failure: fallback.request(target: target, completion: completion)
+            }
+        }
+    }
+}
