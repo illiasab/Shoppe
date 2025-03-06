@@ -35,14 +35,33 @@ final class HomeViewModel: HomeViewModelDelegate {
     func getProduct() {
         dataService?.getProducts(completion: { result in
             switch result {
-            case .success(let categories):
-                self.products = categories
-                self.updateHandler?(categories)
+            case .success(let products):
+                self.products = products
+                self.updateHandler?(products)
             case .failure(let error):
                 Log.error(error.localizedDescription)
             }
         })
     }
+    
+    func loadImage(from product: Products, completion: @escaping (Image?) -> Void) {
+         guard let imageURLString = product.image, let url = URL(string: imageURLString) else {
+             completion(nil)
+             return
+         }
+         
+         DispatchQueue.global().async { [weak self] in
+             if let data = try? Data(contentsOf: url), let uiImage = UIImage(data: data) {
+                 DispatchQueue.main.async {
+                     completion(Image(uiImage: uiImage))
+                 }
+             } else {
+                 DispatchQueue.main.async {
+                     completion(nil)
+                 }
+             }
+         }
+     }
     
     func selectCategory(_ category: String) {
            selectedCategory = category

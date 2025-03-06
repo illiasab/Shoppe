@@ -26,7 +26,7 @@ enum Constants {
     static let haveAccount = "I already have an account"
     static let signUp = "Create Account"
     static let LogIn = "Login"
-    static let LogInSubTitle = "Good to see you back!"
+    static let LogInSubTitle = "Good to see you back! "
 }
 
 enum ImageName {
@@ -36,6 +36,8 @@ enum ImageName {
     static let signUpBlueBubble = "blueAuthBubble"
     static let miniBlueBubble = "miniBlueBubble"
     static let grayLogBubble = "grayLogBubble"
+    static let loginGrayBubble = "loginGrayBubble"
+    static let heartIcon = "customHeart"
     
 }
 
@@ -49,6 +51,7 @@ enum UserDefaultsKey {
     static let isAuthUser = "UserAuthed"
     static let isNotUser = "RegistrationNeeded"
     static let selectedCategory = "selectedCategory"
+    static let isAuthenticated = "isAuthenticated"
 }
 
 enum CoreDataConstant {

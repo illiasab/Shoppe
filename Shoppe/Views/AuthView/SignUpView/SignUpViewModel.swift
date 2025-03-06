@@ -4,16 +4,25 @@
 //
 //  Created by Ylyas Abdywahytow on 3/3/25.
 //
-
+import Foundation
+import FirebaseAuth
 protocol SignUpViewModelDelegate {
-    
+    func signUp(email: String, password: String, completion: @escaping (Result<Bool, AuthError>) -> Void)
 }
+
 final class SignUpViewModel: SignUpViewModelDelegate {
-    private var authService: IAuthService?
-    private var userDefaultsRepository: IUserDefaultsRepository?
-    
+    private let authService: IAuthService
+    private let userDefaultsRepository: IUserDefaultsRepository
+
     init(_ dependencies: IDependencies) {
-        authService = dependencies.authService
-        userDefaultsRepository = dependencies.userDefaultsRepository
+        self.authService = dependencies.authService
+        self.userDefaultsRepository = dependencies.userDefaultsRepository
+    }
+
+    func signUp(email: String, password: String, completion: @escaping (Result<Bool, AuthError>) -> Void) {
+        Task {
+            let success = await authService.signUpWithEmailPassword(email: email, password: password)
+            completion(success)
+        }
     }
 }

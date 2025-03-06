@@ -1,32 +1,31 @@
 //
-//  ProductService.swift
+//  CartsService.swift
 //  Shoppe
 //
 //  Created by Ylyas Abdywahytow on 3/5/25.
 //
 import Foundation
 
-typealias ProductResult = Result<[Products], Error>
-protocol IProductService {
-    func getProducts(completion: @escaping (ProductResult) -> Void)
+typealias CartResult = Result<[Carts], Error>
+protocol ICartService {
+    func getProducts(completion: @escaping (CartResult) -> Void)
 }
 
-struct ProductService: IProductService {
+struct CartService: ICartService {
     private let networkService: IHTTPClient
     
     init(_ dependencies: IDependencies) {
         networkService = dependencies.networkService
     }
-    func getProducts(completion: @escaping (Result<[Products], Error>) -> Void)  {
-        downloadProducts(completion: completion)
+    func getProducts(completion: @escaping (Result<[Carts], Error>) -> Void)  {
+        downloadCarts(completion: completion)
     }
 }
 
-//MARK: - Private
-extension ProductService {
-    private func downloadProducts(completion: @escaping (ProductResult) -> Void) {
+extension CartService {
+    private func downloadCarts(completion: @escaping (CartResult) -> Void) {
         networkService.request(target: .products) { result in
-            var returnedResult: ProductResult
+            var returnedResult: CartResult
             defer {
                 OperationQueue.mainAsyncIfNeeded {
                     completion(returnedResult)
@@ -35,7 +34,7 @@ extension ProductService {
             switch result {
             case .success(let data):
                 do {
-                    let model = try data.decoded() as [Products]
+                    let model = try data.decoded() as [Carts]
                     returnedResult = .success(model)
                 } catch let error {
                     returnedResult = .failure(error)
@@ -47,8 +46,8 @@ extension ProductService {
     }
 }
 
-extension ProductService {
-    private func addProducts(completion: @escaping (ProductResult) -> Void) {
+extension CartService {
+    private func addToCarts(completion: @escaping (CartResult) -> Void) {
         
     }
 }

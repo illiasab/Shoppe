@@ -15,6 +15,8 @@ protocol IUserDefaultsRepository {
     func saveSelectedCategory (_ category: String?)
     func setOnboardingComplete()
     func getSelectedCategory() -> String?
+    func setIsAuthenticatedUser()
+    func isAuthenticated() -> Bool
 }
 
 struct UserDefaultsRepository: IUserDefaultsRepository {
@@ -27,6 +29,7 @@ struct UserDefaultsRepository: IUserDefaultsRepository {
     var isOnboardingCompleteBefore: Bool {
         return container.bool(forKey: UserDefaultsKey.onboardingComplete)
     }
+    
     var isRegistredUserBefore: Bool {
         return container.bool(forKey: UserDefaultsKey.isRegistredUser)
     }
@@ -48,5 +51,12 @@ struct UserDefaultsRepository: IUserDefaultsRepository {
    
     func setOnboardingComplete() {
         container.set(true, forKey: UserDefaultsKey.onboardingComplete)
+    }
+    func setIsAuthenticatedUser() {
+        container.set(true, forKey: UserDefaultsKey.isAuthenticated)
+    }
+    
+    func isAuthenticated() -> Bool {
+        return container.bool(forKey: UserDefaultsKey.isAuthenticated)
     }
 }

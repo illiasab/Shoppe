@@ -27,7 +27,11 @@ final class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func start() {
-        showLaunchFlow()
+        if userDefaultsRepository.isAuthenticated() {
+                  showMainFlow()
+              } else {
+                  showLaunchFlow()
+              }
     }
     
     func showLaunchFlow() {
@@ -70,8 +74,13 @@ extension AppCoordinator: CoordinatorFinishDelegate {
         
         switch childCoordinator.type {
         case .launch:
-            print("🚀 Завершён LaunchCoordinator. Запускаем OnboardingCoordinator")
-            showOnboardingFlow()
+            if userDefaultsRepository.isOnboardingCompleteBefore {
+                showAuthFlow()
+                
+            } else {
+                print("🚀 Завершён LaunchCoordinator. Запускаем OnboardingCoordinator")
+                showOnboardingFlow()
+            }
         case .onboarding:
             print("🚀 Завершён OnboardingCoordinator. Запускаем Auth/Main Coordinator")
             userDefaultsRepository.setOnboardingComplete()
