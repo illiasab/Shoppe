@@ -12,7 +12,7 @@ struct CartView: View {
 	@State var cartItems: [ProductModel] = [
 		ProductModel(
 			image: "pinkSkirt",
-			description: "Nike Running Shoes",
+			description: "Nike Running Shoes there arsldkfjlasjjf; lskjfljsflksjdlkjf slkdfjljslkdfj sldkfjalskdjf lssdkfjslfsldf sldkfjlsdfj",
 			numberOfItems: 2,
 			color: "Black",
 			size: "42",
@@ -62,12 +62,12 @@ struct CartView: View {
 
 	@State var address: String = "26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city"
 
-    var body: some View {
+	var body: some View {
 		VStack {
 			HStack {
 				Text("Chart")
 					.applyFont(.raleway, .bold, 36)
-				NumberOfItemsView(number: cartItems.count)
+				NumberOfItemsView(number: calculateTotalNumberOfItems())
 				Spacer()
 
 			}
@@ -81,9 +81,21 @@ struct CartView: View {
 			.scrollBounceBehavior(.basedOnSize)
 			.scrollIndicators(.hidden)
 			.padding(.horizontal)
+			CheckoutButtonView(total: calculateTotalPrice(), action: {})
 		}
+	}
 
-    }
+	func calculateTotalPrice() -> Double {
+		cartItems.reduce(0) { result, item in
+			result + Double(item.numberOfItems) * item.price
+		}
+	}
+
+	func calculateTotalNumberOfItems() -> Int {
+		cartItems.reduce(0) { result, item in
+			result + item.numberOfItems
+		}
+	}
 }
 
 struct NumberOfItemsView: View {
@@ -144,6 +156,32 @@ struct AddressView: View {
 				.fill(Color.customGray)
 		)
 		.padding(20) // Outer padding for spacing
+	}
+}
+
+struct CheckoutButtonView: View {
+	let total: Double
+	let action: () -> Void
+
+	var body: some View {
+		HStack {
+			Text("Total \(total, format: .currency(code: "USD"))")
+				.applyFont(.raleway, .bold, 18)
+			Spacer()
+			Button(action: action) {
+				Text("Checkout")
+					.foregroundColor(.white)
+					.applyFont(.nunitoSans, .regular, 16)
+					.padding(10)
+					.frame(maxWidth: 128, maxHeight: 40)
+					.background(.mainBlue)
+					.cornerRadius(10)
+			}
+		}
+		.padding(20)
+		.background(
+			Color.customGray
+		)
 	}
 }
 
