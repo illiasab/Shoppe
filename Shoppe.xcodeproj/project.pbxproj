@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ABAA3E92D79D00A00F17D4D /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABAA3E82D79D00A00F17D4D /* CartView.swift */; };
+		4ABAA3EB2D79D5D900F17D4D /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABAA3EA2D79D5D900F17D4D /* CartModel.swift */; };
 		AD0F694C2D76396C000CF5FB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F694B2D763966000CF5FB /* AlertController.swift */; };
 		AD0F694F2D76493B000CF5FB /* LaunchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */; };
 		AD0F69512D766119000CF5FB /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4ABAA3E82D79D00A00F17D4D /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		4ABAA3EA2D79D5D900F17D4D /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		AD0F694B2D763966000CF5FB /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAssembly.swift; sourceTree = "<group>"; };
 		AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -155,6 +159,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4ABAA3E72D79CFE800F17D4D /* CartView */ = {
+			isa = PBXGroup;
+			children = (
+				4ABAA3E82D79D00A00F17D4D /* CartView.swift */,
+				4ABAA3EA2D79D5D900F17D4D /* CartModel.swift */,
+			);
+			path = CartView;
+			sourceTree = "<group>";
+		};
 		AD0F69522D766142000CF5FB /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +303,7 @@
 		AD86809C2D74C599004C6D13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4ABAA3E72D79CFE800F17D4D /* CartView */,
 				ADD3545E2D7742740041449D /* CoordinatorView */,
 				AD0F696B2D767797000CF5FB /* HomeView */,
 				AD0F69662D766B7C000CF5FB /* StartView */,
@@ -548,12 +562,14 @@
 				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
 				AD0F696D2D7677A3000CF5FB /* HomeView.swift in Sources */,
 				AD0F69732D767BA9000CF5FB /* AuthService.swift in Sources */,
+				4ABAA3EB2D79D5D900F17D4D /* CartModel.swift in Sources */,
 				AD0F69772D76838A000CF5FB /* HomeViewModel.swift in Sources */,
 				ADD354602D77428A0041449D /* CoordinatorView.swift in Sources */,
 				AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */,
 				ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */,
 				B506056F2D76139600AA0F4D /* BottomNavigationBar.swift in Sources */,
 				ADAB30AA2D75793500D47FFD /* UserDefaultsRepository.swift in Sources */,
+				4ABAA3E92D79D00A00F17D4D /* CartView.swift in Sources */,
 				ADAB30AC2D757A0700D47FFD /* Constants.swift in Sources */,
 				ADD3546C2D781D6D0041449D /* OperationQueue.swift in Sources */,
 				AD0F69542D766159000CF5FB /* OnboardingAssembly.swift in Sources */,
