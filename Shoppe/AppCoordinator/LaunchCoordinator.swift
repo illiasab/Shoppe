@@ -38,7 +38,7 @@ final class LaunchCoordinator: LaunchCoordinatorProtocol {
 
         guard var launchView = launchView as? LaunchView else { return }
 
-        // Устанавливаем обработчик событий до начала анимации
+      
         launchView.didSendEventHandler = { [weak self] event in
             switch event {
             case .launchComplete:

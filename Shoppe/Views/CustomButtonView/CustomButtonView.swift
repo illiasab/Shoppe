@@ -16,6 +16,7 @@ struct CustomButtonView:View{
                     .applyFont(.nunitoSans, .light,22)
                     .foregroundColor(.startButtonTitle)
             }
+            
                 
             
         }

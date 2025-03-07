@@ -12,7 +12,13 @@ protocol IUserDefaultsRepository {
     var isRegistredUserBefore: Bool { get }
     var isAuthenticatedUser: Bool {get }
     var isNotUserYet: Bool { get }
+    func saveSelectedCategory (_ category: String?)
     func setOnboardingComplete()
+    func getSelectedCategory() -> String?
+    func setIsAuthenticatedUser()
+    func isAuthenticated() -> Bool
+    func getFavoriteProducts() -> [Int]
+    func setUserFavoriteProduct(_ id: Int)
 }
 
 struct UserDefaultsRepository: IUserDefaultsRepository {
@@ -25,6 +31,7 @@ struct UserDefaultsRepository: IUserDefaultsRepository {
     var isOnboardingCompleteBefore: Bool {
         return container.bool(forKey: UserDefaultsKey.onboardingComplete)
     }
+    
     var isRegistredUserBefore: Bool {
         return container.bool(forKey: UserDefaultsKey.isRegistredUser)
     }
@@ -35,8 +42,34 @@ struct UserDefaultsRepository: IUserDefaultsRepository {
         return container.bool(forKey: UserDefaultsKey.isNotUser)
     }
     
+    func setUserFavoriteProduct(_ id: Int) {
+        var favorites = getFavoriteProducts()
+        if !favorites.contains(id) {
+            favorites.append(id)
+        }
+        container.set(favorites, forKey: UserDefaultsKey.userFavorites)
+    }
+    
+   func saveSelectedCategory(_ category: String?) {
+       container.set(category, forKey: UserDefaultsKey.selectedCategory)
+    }
+    
+    func getSelectedCategory() -> String? {
+        return container.string(forKey: UserDefaultsKey.selectedCategory)
+    }
+    
    
     func setOnboardingComplete() {
         container.set(true, forKey: UserDefaultsKey.onboardingComplete)
+    }
+    func setIsAuthenticatedUser() {
+        container.set(true, forKey: UserDefaultsKey.isAuthenticated)
+    }
+    
+    func isAuthenticated() -> Bool {
+        return container.bool(forKey: UserDefaultsKey.isAuthenticated)
+    }
+    func getFavoriteProducts() -> [Int] {
+        return container.array(forKey: UserDefaultsKey.userFavorites) as? [Int] ?? [1,2,3,4]
     }
 }

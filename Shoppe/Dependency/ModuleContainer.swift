@@ -77,7 +77,7 @@ extension ModuleContainer {
 // MARK: - HomeView
 extension ModuleContainer {
     func getHomeView() -> any View {
-        var view = HomeView()
+        var view = HomeView(viewModel:HomeViewModel(dependencies))
         let viewModel = HomeViewModel(dependencies)
         view.viewModel = viewModel
         return view
