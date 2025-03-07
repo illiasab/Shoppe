@@ -743,7 +743,6 @@
 				ADD354622D7776340041449D /* OnboardingView.swift in Sources */,
 				6CC7D0C52D7B300F00F675AD /* ShimmerPopularProducts.swift in Sources */,
 				AD0F69582D7667BC000CF5FB /* AuthCoordinator.swift in Sources */,
-				B506057E2D7834BC00AA0F4D /* WishListView.swift in Sources */,
 				AD0F69652D7669B5000CF5FB /* LoginAssembly.swift in Sources */,
 				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
 				ADB7BFB02D78D45900C44563 /* (null) in Sources */,
