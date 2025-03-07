@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct PopularProducts: View {
+    let adres: String
     let priceRegion: String
     let products: [Products]
     let action: () -> Void
+    let priceTransform: (Double,String) -> Double
     
     var body: some View {
         VStack(spacing: 5) {
-            ScrollButtons(title: "Popular", button: true, action: {action()})
+            ScrollButtons(title: "Popular", button: true, action: {action()}, shimmer: false)
                 .padding(.horizontal,20)
+                
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 10) {
@@ -51,7 +54,7 @@ struct PopularProducts: View {
                                     .lineLimit(2)
                                     .frame(height: 30)
                                 
-                                Text("\(Double(product.price), format: .currency(code: priceRegion))")
+                                Text("\(priceTransform(product.price,adres), format: .currency(code: priceRegion))")
                                     .applyFont(.raleway,.bold,17)
                             }
                             .frame(width: 140)
@@ -63,6 +66,7 @@ struct PopularProducts: View {
             }
         }
         .frame(height: 247)
+        .padding(.top,20)
     }
 }
 

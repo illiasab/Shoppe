@@ -36,7 +36,7 @@ struct CategoryItems: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 9)
                             .frame(width: 38, height: 20)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(.collectionCountBackground)
                         Text(count)
                             .applyFont(.raleway,.bold,12)
                             .foregroundStyle(.black)
@@ -67,7 +67,7 @@ struct HomeCategoriesView: View {
         
         ScrollButtons(title: "Categories",
                       button: true,
-                      action: { action() }) 
+                      action: { action() }, shimmer: false) 
             .padding(.horizontal,20)
         
         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
