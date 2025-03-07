@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct JustForYouView: View {
+    let adres: String
     let priceRegion: String
     let products: [Products]
     let addInCartaction: () -> Void
     let addInFavorites: () -> Void
+    let priceTransform: (Double,String) -> Double
     
     var body: some View {
         ScrollButtons(title: "Just For You", button: false, action: {}, shimmer: false)
@@ -51,7 +53,7 @@ struct JustForYouView: View {
                         print("go to productinfo view ( product id: \(product.id)")
                     }
                     HStack {
-                        Text("\(Double(product.price), format: .currency(code: priceRegion))")
+                        Text("\(priceTransform(product.price, adres), format: .currency(code: priceRegion))")
                             .applyFont(.raleway,.bold,17)
                         Spacer()
                         Button {
@@ -80,6 +82,7 @@ struct JustForYouView: View {
             }
         }
         .padding(.horizontal, 20)
+        .padding(.bottom, 50)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CA27E202D7B50E100D5B943 /* CurrenciesNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA27E1F2D7B50E100D5B943 /* CurrenciesNetwork.swift */; };
 		6CC7D0C12D7B24B500F675AD /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7D0C02D7B24B500F675AD /* Shimmer.swift */; };
 		6CC7D0C32D7B287000F675AD /* ShimmerJustForYou.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7D0C22D7B287000F675AD /* ShimmerJustForYou.swift */; };
 		6CC7D0C52D7B300F00F675AD /* ShimmerPopularProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7D0C42D7B300F00F675AD /* ShimmerPopularProducts.swift */; };
@@ -133,6 +134,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CA27E1F2D7B50E100D5B943 /* CurrenciesNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesNetwork.swift; sourceTree = "<group>"; };
 		6CC7D0C02D7B24B500F675AD /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		6CC7D0C22D7B287000F675AD /* ShimmerJustForYou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerJustForYou.swift; sourceTree = "<group>"; };
 		6CC7D0C42D7B300F00F675AD /* ShimmerPopularProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerPopularProducts.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				6CC7D0C02D7B24B500F675AD /* Shimmer.swift */,
 				6CC7D0C22D7B287000F675AD /* ShimmerJustForYou.swift */,
 				6CC7D0C42D7B300F00F675AD /* ShimmerPopularProducts.swift */,
+				6CA27E1F2D7B50E100D5B943 /* CurrenciesNetwork.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				ADC0B7222D7A2CB600629A0E /* AllCategoriesModel.swift in Sources */,
 				ADC0B7232D7A2CB600629A0E /* AllCategoriesView.swift in Sources */,
 				AD6B03BA2D7ACCF3008A6C32 /* HomeView.swift in Sources */,
+				6CA27E202D7B50E100D5B943 /* CurrenciesNetwork.swift in Sources */,
 				AD0F69752D768300000CF5FB /* HomeAssembly.swift in Sources */,
 				ADAB30A82D75681800D47FFD /* LaunchView.swift in Sources */,
 				AD0F69632D7669A6000CF5FB /* SignUpAssembly.swift in Sources */,

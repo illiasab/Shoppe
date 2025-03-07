@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct PopularProducts: View {
+    let adres: String
     let priceRegion: String
     let products: [Products]
     let action: () -> Void
+    let priceTransform: (Double,String) -> Double
     
     var body: some View {
         VStack(spacing: 5) {
@@ -52,7 +54,7 @@ struct PopularProducts: View {
                                     .lineLimit(2)
                                     .frame(height: 30)
                                 
-                                Text("\(Double(product.price), format: .currency(code: priceRegion))")
+                                Text("\(priceTransform(product.price,adres), format: .currency(code: priceRegion))")
                                     .applyFont(.raleway,.bold,17)
                             }
                             .frame(width: 140)

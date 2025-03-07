@@ -31,23 +31,24 @@ struct HomeView: View {
                                    action: {print("go to all categoriesView")})
                 
             if !products.isEmpty {
-                                PopularProducts(priceRegion: viewModel?.priceRegion ?? "",
+                PopularProducts(adres: userAdress, priceRegion: viewModel?.priceRegion ?? "",
                                                 products: products,
-                                                action: { print("go to popularView") })
+                                                action: { print("go to popularView") },
+                                priceTransform: viewModel?.priceTransform ?? { _ , _ in return 0.0} )
                             } else {
                                 ShimmerPopularProducts()
                             }
                             
                             
                 if !products.isEmpty {
-                    JustForYouView(priceRegion: viewModel?.priceRegion ?? "", products: products,
+                    JustForYouView(adres: userAdress, priceRegion: viewModel?.priceRegion ?? "", products: products,
                     addInCartaction: {},
-                    addInFavorites: {})
+                                   addInFavorites: {},
+                                   priceTransform: viewModel?.priceTransform ?? { _ , _ in return 0.0})
                 } else {
                     ShimmerJustForYouView()
                 }
             }
-            .padding(.bottom, 50)
             .onAppear {
                 fetchProducts()
         }
