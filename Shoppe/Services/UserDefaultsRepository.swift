@@ -69,6 +69,7 @@ struct UserDefaultsRepository: IUserDefaultsRepository {
     func isAuthenticated() -> Bool {
         return container.bool(forKey: UserDefaultsKey.isAuthenticated)
     }
+    
     func getFavoriteProducts() -> [Int] {
         return container.array(forKey: UserDefaultsKey.userFavorites) as? [Int] ?? [1,2,3,4]
     }

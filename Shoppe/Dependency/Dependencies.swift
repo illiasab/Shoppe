@@ -15,6 +15,7 @@ protocol IDependencies {
     var alertBuilder: IAlertsBuilder { get }
     var authService: IAuthService { get }
     var myProductService: IProductService { get }
+    var cartService: ICartService { get }
 }
 
 
@@ -25,4 +26,5 @@ final class Dependencies: IDependencies, ObservableObject{
     lazy var alertBuilder: IAlertsBuilder = AlertsBuilder()
     lazy var authService: IAuthService = AuthService(dependencies: self)
     lazy var myProductService: IProductService = ProductService(self)
+    lazy var cartService: ICartService = CartService(self)
 }
