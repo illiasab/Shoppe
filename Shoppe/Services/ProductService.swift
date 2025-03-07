@@ -46,3 +46,9 @@ extension ProductService {
         }
     }
 }
+
+extension ProductService {
+    private func addProducts(completion: @escaping (ProductResult) -> Void) {
+        
+    }
+}

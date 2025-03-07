@@ -23,6 +23,6 @@ final class Dependencies: IDependencies, ObservableObject{
     lazy var userDefaultsRepository: IUserDefaultsRepository = UserDefaultsRepository(container: UserDefaults.standard)
     lazy var networkService:IHTTPClient = HTTPClient()
     lazy var alertBuilder: IAlertsBuilder = AlertsBuilder()
-    lazy var authService: IAuthService = AuthService()
+    lazy var authService: IAuthService = AuthService(dependencies: self)
     lazy var myProductService: IProductService = ProductService(self)
 }
