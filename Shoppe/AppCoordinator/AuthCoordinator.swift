@@ -19,14 +19,21 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
     var type: CoordinatorType { .auth }
     var dependencies: IDependencies
     var onAuthSuccess: Bool = false
+    var userDefaultsRepository: IUserDefaultsRepository
     
     required init(_ navigationController: UINavigationController, dependencies: IDependencies) {
         self.navigationController = navigationController
+        self.userDefaultsRepository = dependencies.userDefaultsRepository
         self.dependencies = dependencies
+        
     }
     
     func start() {
-        showStartView()
+        if userDefaultsRepository.isAuthenticated() {
+            finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+        } else {
+                showStartView()
+            }
     }
     //MARK: - Back To startView
     private func goBackToStartView() {
@@ -78,6 +85,7 @@ final class AuthCoordinator: AuthCoordinatorProtocol {
     }
     
     private func didAuthenticateUser() {
+        userDefaultsRepository.setIsAuthenticatedUser()
         onAuthSuccess = true
         finishDelegate?.coordinatorDidFinish(childCoordinator: self)
     }

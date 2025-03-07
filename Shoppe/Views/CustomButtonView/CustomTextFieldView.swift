@@ -8,27 +8,46 @@ import SwiftUI
 
 
 struct CustomTextFieldView: View{
-    @State var credentials: String
+    @Binding var credentials: String
+    @State var isSecureEntry: Bool = true
     var color: Color
     var textFieldTitle: String
-    var isSecureTextField: Bool = false
-    @State var isSecureTextEntry: Bool = false
+    var isSecure: Bool = false
+    var keyboardType: UIKeyboardType = .default
     var body: some View{
         VStack{
+            
             HStack{
+                if isSecure{
+                    if isSecureEntry {
+                    
+                    SecureField(textFieldTitle,text: $credentials)
+                        .foregroundColor(.mainBlack)
+                        .textInputAutocapitalization(.never)
+                    
+                    
+                } else {
+                    
+                    TextField(textFieldTitle,text: $credentials)
+                        .foregroundColor(.mainBlack)
+                        .textContentType(.emailAddress)
+                        .textInputAutocapitalization(.never)
+                }
+                Button(action:{
+                    isSecureEntry.toggle()
+                })
+                {
+                    Image(systemName: isSecureEntry ?"eye.slash" : "eye")
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(.mainBlack)
+                        .padding(.trailing,20)
+                }
+            } else {
                 TextField(textFieldTitle,text: $credentials)
                     .foregroundColor(.mainBlack)
-                if isSecureTextField {
-                    Button(action:{
-                        isSecureTextEntry.toggle()
-                    })
-                    {
-                        Image(systemName: isSecureTextEntry ?"eye" : "eye.slash")
-                            .frame(width: 16, height: 16)
-                            .foregroundColor(.mainBlack)
-                            .padding(.trailing,20)
-                    }
-                }
+                    .textContentType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+            }
             }
             .padding(.leading,20)
             .frame(width:335,height: 53)
@@ -38,5 +57,5 @@ struct CustomTextFieldView: View{
     }
 }
 #Preview{
-    CustomTextFieldView(credentials: "", color: .textField, textFieldTitle: "Email")
+    CustomTextFieldView(credentials: .constant(""), color: .textField, textFieldTitle: "Email")
 }
