@@ -17,7 +17,7 @@ struct SignUpView: View {
     var onSignUpSuccess: (() -> Void)?
     var onCancelTapped: (() -> Void)?
     
-    var title = ""
+    var title = ""//
 
     var body: some View {
         GeometryReader { geometry in
@@ -58,7 +58,11 @@ struct SignUpView: View {
                             .font(.footnote)
                     }
 
-                    CustomButtonView(title: "Done", action: signUpUser)
+                    CustomButtonView(title: "Done", action: {
+                        Task {
+                            await signUpUser()
+                        }
+                    })
 
                     Button(action: {
                         onCancelTapped?()
@@ -75,14 +79,14 @@ struct SignUpView: View {
         }
     }
     
-    private func signUpUser() {
+    private func signUpUser() async {
         guard !email.isEmpty, !password.isEmpty else {
             errorMessage = "Email and password cannot be empty."
             return
         }
         errorMessage = nil
         
-        viewModel?.signUp(email: email, password: password, completion: { result in
+        await viewModel?.signUp(email: email, password: password, completion: { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
