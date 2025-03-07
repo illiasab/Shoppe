@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CC7D0C12D7B24B500F675AD /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7D0C02D7B24B500F675AD /* Shimmer.swift */; };
+		6CC7D0C32D7B287000F675AD /* ShimmerJustForYou.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7D0C22D7B287000F675AD /* ShimmerJustForYou.swift */; };
+		6CC7D0C52D7B300F00F675AD /* ShimmerPopularProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC7D0C42D7B300F00F675AD /* ShimmerPopularProducts.swift */; };
 		AD0F694C2D76396C000CF5FB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F694B2D763966000CF5FB /* AlertController.swift */; };
 		AD0F694F2D76493B000CF5FB /* LaunchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */; };
 		AD0F69512D766119000CF5FB /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */; };
@@ -130,6 +133,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CC7D0C02D7B24B500F675AD /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		6CC7D0C22D7B287000F675AD /* ShimmerJustForYou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerJustForYou.swift; sourceTree = "<group>"; };
+		6CC7D0C42D7B300F00F675AD /* ShimmerPopularProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerPopularProducts.swift; sourceTree = "<group>"; };
 		AD0F694B2D763966000CF5FB /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		AD0F694E2D764934000CF5FB /* LaunchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAssembly.swift; sourceTree = "<group>"; };
 		AD0F69502D766111000CF5FB /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -311,6 +317,9 @@
 				AD6B03C32D7ACD28008A6C32 /* PopularProducts.swift */,
 				AD6B03C52D7ACD2F008A6C32 /* JustForYouView.swift */,
 				AD6B03C72D7ACD41008A6C32 /* CustomSearchBar.swift */,
+				6CC7D0C02D7B24B500F675AD /* Shimmer.swift */,
+				6CC7D0C22D7B287000F675AD /* ShimmerJustForYou.swift */,
+				6CC7D0C42D7B300F00F675AD /* ShimmerPopularProducts.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -710,9 +719,11 @@
 				AD6B03B42D7AC2C3008A6C32 /* UIImageExtension.swift in Sources */,
 				ADB7BFAA2D78D43100C44563 /* (null) in Sources */,
 				ADB7BFEF2D795C8100C44563 /* (null) in Sources */,
+				6CC7D0C12D7B24B500F675AD /* Shimmer.swift in Sources */,
 				AD6B03C62D7ACD2F008A6C32 /* JustForYouView.swift in Sources */,
 				AD0F69612D76694B000CF5FB /* LoginView.swift in Sources */,
 				ADD354622D7776340041449D /* OnboardingView.swift in Sources */,
+				6CC7D0C52D7B300F00F675AD /* ShimmerPopularProducts.swift in Sources */,
 				AD0F69582D7667BC000CF5FB /* AuthCoordinator.swift in Sources */,
 				AD0F69652D7669B5000CF5FB /* LoginAssembly.swift in Sources */,
 				ADAB30972D753FB700D47FFD /* HTTPClient.swift in Sources */,
@@ -722,6 +733,7 @@
 				AD0F69732D767BA9000CF5FB /* AuthService.swift in Sources */,
 				AD0F69772D76838A000CF5FB /* HomeViewModel.swift in Sources */,
 				ADD354602D77428A0041449D /* CoordinatorView.swift in Sources */,
+				6CC7D0C32D7B287000F675AD /* ShimmerJustForYou.swift in Sources */,
 				AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */,
 				AD6B03CE2D7ACE9D008A6C32 /* Users.swift in Sources */,
 				ADAB30AF2D757DD900D47FFD /* Response.swift in Sources */,

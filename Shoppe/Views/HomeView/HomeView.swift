@@ -35,7 +35,7 @@ struct HomeView: View {
                                                 products: products,
                                                 action: { print("go to popularView") })
                             } else {
-                                ProgressView("Loading popular products...")
+                                ShimmerPopularProducts()
                             }
                             
                             
@@ -44,7 +44,7 @@ struct HomeView: View {
                     addInCartaction: {},
                     addInFavorites: {})
                 } else {
-                    ProgressView("Loading products for you...")
+                    ShimmerJustForYouView()
                 }
             }
             .padding(.bottom, 50)
