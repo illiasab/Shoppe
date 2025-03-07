@@ -56,7 +56,7 @@ struct HomeView: View {
     }
     func fetchProducts() {
           viewModel?.getProduct()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
               if let popularProducts = viewModel?.popularProducts, !popularProducts.isEmpty {
                   self.products = popularProducts
               }

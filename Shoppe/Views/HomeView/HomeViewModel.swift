@@ -88,7 +88,7 @@ final class HomeViewModel: HomeViewModelDelegate {
         userDefaultsRepository = dependencies.userDefaultsRepository
         selectedCategory = userDefaultsRepository?.getSelectedCategory()
         
-//        updateCurrency() //add MARAT
+        updateCurrency() //add MARAT
         
     }
     // MARK: - Get Products
@@ -115,7 +115,7 @@ final class HomeViewModel: HomeViewModelDelegate {
        }
     
     var popularProducts: [Products] {
-        allProducts.sorted { $0.id > $1.id }
+        allProducts.sorted { $0.price > $1.price }
     }
 
     var justForYouProducts: [Products] {
