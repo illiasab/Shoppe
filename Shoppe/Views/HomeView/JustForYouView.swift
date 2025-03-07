@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct JustForYouView: View {
+    let adres: String
     let priceRegion: String
     let products: [Products]
     let addInCartaction: () -> Void
     let addInFavorites: () -> Void
+    let priceTransform: (Double,String) -> Double
     
     var body: some View {
-        ScrollButtons(title: "Just For You", button: false, action: {})
+        ScrollButtons(title: "Just For You", button: false, action: {}, shimmer: false)
             .padding(.horizontal,20)
+            .padding(.top,20)
         
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)]) {
             ForEach(products, id:\.id) { product in
@@ -23,11 +26,16 @@ struct JustForYouView: View {
                     VStack(alignment: .leading) {
                         // IMAGE
                         AsyncImage(url: URL(string: product.image ?? "")) { Image in
-                            Image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 165, height: 316)
-                                .clipShape(RoundedRectangle(cornerRadius: 9))
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 9)
+                                    .foregroundStyle(.white)
+                                    .shadow(color: .mainBlack.opacity(0.04), radius: 5, x: 0, y: 5)
+                                Image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+//                                    .clipShape(RoundedRectangle(cornerRadius: 9))
+                            }
+                            .frame(width: 165, height: 316)
                         } placeholder: {
                             Image("PlaceholderProduct")
                                 .resizable()
@@ -45,7 +53,7 @@ struct JustForYouView: View {
                         print("go to productinfo view ( product id: \(product.id)")
                     }
                     HStack {
-                        Text("\(Double(product.price), format: .currency(code: priceRegion))")
+                        Text("\(priceTransform(product.price, adres), format: .currency(code: priceRegion))")
                             .applyFont(.raleway,.bold,17)
                         Spacer()
                         Button {
@@ -74,6 +82,7 @@ struct JustForYouView: View {
             }
         }
         .padding(.horizontal, 20)
+        .padding(.bottom, 50)
     }
 }
 

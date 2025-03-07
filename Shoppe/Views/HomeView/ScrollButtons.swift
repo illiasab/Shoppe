@@ -11,6 +11,7 @@ struct ScrollButtons: View {
     let title: String
     let button: Bool
     let action: ()-> Void
+    let shimmer: Bool
     
     var body: some View {
         HStack {
@@ -26,15 +27,26 @@ struct ScrollButtons: View {
                             .applyFont(.raleway,.bold,15)
                             .foregroundStyle(.black)
                         ZStack {
-                            Circle()
-                                .frame(width:30)
-                                .foregroundStyle(.mainBlue)
-                            Image(systemName: "arrow.right")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 15)
-                                .foregroundStyle(.white)
-                            
+                            if shimmer != false {
+                                Circle()
+                                    .frame(width:30)
+                                    .foregroundStyle(.mainBlue)
+                                    .shimmering()
+                                Image(systemName: "arrow.right")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 15)
+                                    .foregroundStyle(.white)
+                            } else {
+                                Circle()
+                                    .frame(width:30)
+                                    .foregroundStyle(.mainBlue)
+                                Image(systemName: "arrow.right")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 15)
+                                    .foregroundStyle(.white)
+                            }
                         }
                     }
                 }
@@ -44,5 +56,5 @@ struct ScrollButtons: View {
 }
 
 #Preview {
-    ScrollButtons(title: "Categories", button: true, action: {})
+    ScrollButtons(title: "Categories", button: true, action: {}, shimmer: true)
 }

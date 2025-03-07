@@ -43,9 +43,17 @@ protocol HomeViewModelDelegate {
     func getProduct()
     func addInCart(product: Products)
     func addToFavorite(product: Products)
+    
+    func priceTransform(price: Double, adres: String) -> Double //add MARAT
 }
 
 final class HomeViewModel: HomeViewModelDelegate {
+    
+    //Currency
+    var rur = 90.0
+    var usd = 1.0
+    var eur = 0.90
+    
     var updateHandler: (([Products]) -> Void)?
     var products: [Products]? = []
     var cartItemsCount = 0
@@ -74,11 +82,14 @@ final class HomeViewModel: HomeViewModelDelegate {
         }
     }
   //MARK: - Depedencies Injection
-    init(_ dependencies: IDependencies) {
+    init(_ dependencies: IDependencies){
         dataService = dependencies.myProductService
         networkingService = dependencies.networkService
         userDefaultsRepository = dependencies.userDefaultsRepository
         selectedCategory = userDefaultsRepository?.getSelectedCategory()
+        
+//        updateCurrency() //add MARAT
+        
     }
     // MARK: - Get Products
     func getProduct() {
@@ -117,8 +128,39 @@ final class HomeViewModel: HomeViewModelDelegate {
          updateHandler?(products)
      }
 
-
-
+    func priceTransform(price: Double, adres: String) -> Double {
+            
+            switch adres {
+            case "Russia, Moscow": return price * rur
+            case "England, Manchester": return price * eur
+            default:
+                return price
+            }
+        }
+    
+        //CURRENCY service
+        func updateCurrency() {
+            let currencyService = CurrencyService()
+            ////ASYNC
+//            let currencies = await currencyService.fetchCurrencies()
+            
+//            self.rur = currencies?.data.RUB.value ?? 1.0
+//            self.usd = currencies?.data.USD.value ?? 1.0
+//            self.eur = currencies?.data.EUR.value ?? 1.0
+            
+            
+        currencyService.fetchCurrencies { result in
+                switch result {
+                case .success(let currencies):
+                    self.rur = currencies.data.RUB.value
+                    self.usd = currencies.data.USD.value
+                    self.eur = currencies.data.EUR.value
+                case .failure(let error):
+                    print("currence func dont work - fail net operation")
+                    print(error)
+                }
+            }
+        }
     
 //MARK: - COnvert URL to UIImage
     func loadImage(from product: Products, completion: @escaping (Image?) -> Void) {
