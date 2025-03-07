@@ -16,14 +16,13 @@ struct CartProductView: View {
 			ZStack(alignment: .bottomLeading) {
 				Image(product.image)
 					.resizable()
-					.aspectRatio(contentMode: .fill)
-					.frame(width: 121, height: 101)
-					.clipped()
-					.overlay(
-						RoundedRectangle(cornerRadius: 5, style: .continuous) // Same shape for the border
-							.stroke(Color.white, lineWidth: 4) // White border with 4 points width
-					)
-					.shadow(radius: 5)
+					.scaledToFill()
+					.cornerRadius(10)
+					.frame(width: 120, height: 108)
+					.clipShape(RoundedRectangle(cornerRadius: 10))
+					.overlay(RoundedRectangle(cornerRadius: 10)
+						.stroke(Color.white, lineWidth: 4))
+					.shadow(color: .gray.opacity(0.4), radius: 5, x: 0, y: 2)
 				ZStack {
 					Circle()
 						.fill(Color.white)
