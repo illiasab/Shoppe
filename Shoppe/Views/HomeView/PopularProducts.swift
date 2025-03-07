@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopularProducts: View {
     let priceRegion: String
-    let products: [ProductMock]
+    let products: [Products]
     let action: () -> Void
     
     var body: some View {
@@ -27,7 +27,7 @@ struct PopularProducts: View {
                                     .foregroundStyle(.white)
                                     .shadow(radius: 5)
                                 
-                                AsyncImage(url: URL(string: product.imageUrl)) { Image in
+                                AsyncImage(url: URL(string: product.image ?? "")) { Image in
                                     Image
                                         .resizable()
                                         .scaledToFill()
@@ -42,12 +42,12 @@ struct PopularProducts: View {
                             .frame(width: 140, height: 140)
                             // TEXT
                             VStack(alignment: .leading){
-                                Text(product.description)
+                                Text(product.title ?? "")
                                     .applyFont(.nunitoSans,.regular,12)
                                     .lineLimit(2)
                                     .frame(height: 30)
                                 
-                                Text("\(Double(product.price) ?? 0.00, format: .currency(code: priceRegion))")
+                                Text("\(Double(product.price), format: .currency(code: priceRegion))")
                                     .applyFont(.raleway,.bold,17)
                             }
                             .frame(width: 140)
@@ -62,5 +62,5 @@ struct PopularProducts: View {
 }
 
 #Preview {
-    PopularProducts(priceRegion: "EUR", products: [ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: ""), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {})
+//    PopularProducts(priceRegion: "EUR", products: [Products(title: "Adid", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: ""), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "")], action: {})
 }

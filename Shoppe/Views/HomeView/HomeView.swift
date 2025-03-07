@@ -2,57 +2,69 @@
 //  HomeView.swift
 //  Shoppe
 //
-//  Created by Ylyas Abdywahytow on 3/3/25.
+//  Created by Marat Fakhrizhanov on 02.03.2025.
 //
+
 import SwiftUI
 
 struct HomeView: View {
-    var viewModel: HomeViewModel?
+    var viewModel: HomeViewModelDelegate?
     @State private var products: [Products] = []
     @State private var productImages: [String:Image] = [:]
+    @State private var searchText: String = ""
+    @State private var userAdress = "Russia, Moscow"
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModelDelegate?) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        ScrollView{
-            VStack {
-                ForEach(products, id: \.self) { product in
-                    VStack {
-                        Text(product.title ?? "Unknown Product")
-                        
-                        Button(action: {
-                            viewModel?.loadImage(from: product) { image in
-                                if let image = image {
-                                    productImages[product.image ?? ""] = image
-                                }
+        
+        HomeToolbar(userAdress: $userAdress,
+                    adresses: viewModel?.adresses ?? [],
+                        cartItemsCount: viewModel?.cartItemsCount ?? 2)
+        
+            HomeSearchView(searchText: $searchText)
+        
+        ScrollView(showsIndicators: false) {
+                
+            HomeCategoriesView(chooseCategories: viewModel?.chooseCategories ?? [.bags],
+                                   action: {print("go to all categoriesView")})
+                
+            if !products.isEmpty {
+                                PopularProducts(priceRegion: viewModel?.priceRegion ?? "",
+                                                products: products,
+                                                action: { print("go to popularView") })
+                            } else {
+                                ProgressView("Loading popular products...")
                             }
-                        }) {
-                            Text("Load Image for \(product.title ?? "Unknown Product")")
-                        }
-                        
-                        if let image = productImages[product.image ?? ""] {
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200, height: 200)
-                        } else {
-                        }
-                    }
-                    .padding()
+                            
+                            
+                if !products.isEmpty {
+                    JustForYouView(priceRegion: viewModel?.priceRegion ?? "", products: products,
+                    addInCartaction: {},
+                    addInFavorites: {})
+                } else {
+                    ProgressView("Loading products for you...")
                 }
             }
+            .padding(.bottom, 50)
             .onAppear {
-                viewModel?.getProduct()
-                viewModel?.updateHandler = { loadedProducts in
-                    self.products = loadedProducts
-                }
-            }
+                fetchProducts()
         }
+                       
     }
+    func fetchProducts() {
+          viewModel?.getProduct()
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+              if let popularProducts = viewModel?.popularProducts, !popularProducts.isEmpty {
+                  self.products = popularProducts
+              }
+          }
+      }
+    
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel(Dependencies()))
+    HomeView(viewModel: HomeViewModel(Dependencies()) )
 }

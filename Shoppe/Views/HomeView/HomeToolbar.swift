@@ -42,17 +42,19 @@ struct HomeToolbar: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30, height: 30)
-                    ZStack {
-                        Circle()
-                            .frame(width: 12, height: 12)
-                            .foregroundStyle(.red)
-                        
-                        Text(String(cartItemsCount))
-                            .font(.system(size: 8))
-                            .bold()
-                            .foregroundStyle(.white)
+                    if cartItemsCount > 0 {
+                        ZStack {
+                            Circle()
+                                .frame(width: 12, height: 12)
+                                .foregroundStyle(.red)
+                            
+                            Text(String(cartItemsCount))
+                                .font(.system(size: 8))
+                                .bold()
+                                .foregroundStyle(.white)
+                        }
+                        .offset(x: 13, y: -13)
                     }
-                    .offset(x: 13, y: -13)
                 }
             }
             .buttonStyle(.plain)

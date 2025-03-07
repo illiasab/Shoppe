@@ -9,7 +9,7 @@ import SwiftUI
 
 struct JustForYouView: View {
     let priceRegion: String
-    let products: [ProductMock]
+    let products: [Products]
     let addInCartaction: () -> Void
     let addInFavorites: () -> Void
     
@@ -22,7 +22,7 @@ struct JustForYouView: View {
                 VStack(alignment: .leading, spacing: 7) {
                     VStack(alignment: .leading) {
                         // IMAGE
-                        AsyncImage(url: URL(string: product.imageUrl)) { Image in
+                        AsyncImage(url: URL(string: product.image ?? "")) { Image in
                             Image
                                 .resizable()
                                 .scaledToFill()
@@ -34,7 +34,7 @@ struct JustForYouView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 9))
                         }
                         //TEXT
-                        Text(product.description)
+                        Text(product.title ?? "")
                             .applyFont(.nunitoSans,.light,12)
                             .lineLimit(2)
                             .frame(height: 30)
@@ -44,7 +44,7 @@ struct JustForYouView: View {
                         print("go to productinfo view ( product id: \(product.id)")
                     }
                     HStack {
-                        Text("\(Double(product.price) ?? 0.00, format: .currency(code: priceRegion))")
+                        Text("\(Double(product.price), format: .currency(code: priceRegion))")
                             .applyFont(.raleway,.bold,17)
                         Spacer()
                         Button {
@@ -77,5 +77,5 @@ struct JustForYouView: View {
 }
 
 #Preview {
-    JustForYouView(priceRegion: "RUR", products: [ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur")], addInCartaction: {print("in cart")}, addInFavorites: {print("in favorit")})
+//    JustForYouView(priceRegion: "RUR", products: [ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), ProductMock(title: "Adidas", price: "99", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur")], addInCartaction: {print("in cart")}, addInFavorites: {print("in favorit")})
 }

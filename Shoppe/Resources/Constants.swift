@@ -52,6 +52,7 @@ enum UserDefaultsKey {
     static let isNotUser = "RegistrationNeeded"
     static let selectedCategory = "selectedCategory"
     static let isAuthenticated = "isAuthenticated"
+    static let userFavorites = "userFavorites"
 }
 
 enum CoreDataConstant {
@@ -61,3 +62,5 @@ enum CoreDataConstant {
     static let CartContainerName: String = "CartConttainer"
     static let PaymentContainerName: String = "PaymentContainer"
 }
+
+
