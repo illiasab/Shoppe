@@ -17,37 +17,38 @@ struct WishListView: View {
     ]
     
     var body: some View {
-            VStack {
+        GeometryReader{ geometry in
+            VStack(spacing: 10){
                 Text("WishList")
-                    .applyFont(.raleway, .bold, 36)
-                Spacer()
-                HStack {
-                    Text("Search")
-                        .applyFont(.raleway, .bold, 16)
-                        .foregroundColor(.gray)
-                        .padding()
-                    
+                    .applyFont(.raleway, .bold, 28)
                     HStack {
-                        TextField("", text: $searchText)
-                            .padding(5)
-                        
-                        if !searchText.isEmpty {
-                            Button(action: {
-                                searchText = ""
-                            }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(.gray)
-                                Spacer()
-                                Spacer()
+                        HStack{
+                            TextField("Search", text: $searchText)
+                                .padding(5)
+                            
+                            
+                            if !searchText.isEmpty {
+                                Button(action: {
+                                    searchText = ""
+                                }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.gray)
+                                    
+                                    
+                                }
                             }
+                           
                         }
-                        
+                        .padding(5)
+                        .frame(width:geometry.size.width
+                               * 0.7, height: 36)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(18)
+                        Spacer()
                     }
-                    .padding(5)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                }
                 .padding(.horizontal)
+                
+                
                 
                 ScrollView {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 25), count: 2), spacing: 5) {
@@ -62,7 +63,7 @@ struct WishListView: View {
                 
                 BottomNavigationBar()
             }
-            .navigationBarHidden(true)
+        }
     }
 }
 
