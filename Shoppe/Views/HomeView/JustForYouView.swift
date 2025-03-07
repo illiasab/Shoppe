@@ -25,7 +25,8 @@ struct JustForYouView: View {
                         AsyncImage(url: URL(string: product.image ?? "")) { Image in
                             Image
                                 .resizable()
-                                .scaledToFill()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 165, height: 316)
                                 .clipShape(RoundedRectangle(cornerRadius: 9))
                         } placeholder: {
                             Image("PlaceholderProduct")

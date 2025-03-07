@@ -25,12 +25,13 @@ struct PopularProducts: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 9)
                                     .foregroundStyle(.white)
-                                    .shadow(radius: 5)
+                                    .shadow(color: .mainBlack.opacity(0.09), radius: 5, x: 0, y: 5)
                                 
                                 AsyncImage(url: URL(string: product.image ?? "")) { Image in
                                     Image
                                         .resizable()
-                                        .scaledToFill()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 130, height: 130)
                                         .padding(5)
                                 } placeholder: {
                                     Image("adidasPopular")
@@ -38,8 +39,11 @@ struct PopularProducts: View {
                                         .scaledToFit()
                                         .padding(5)
                                 }
+                               
                             }
                             .frame(width: 140, height: 140)
+                          
+                          
                             // TEXT
                             VStack(alignment: .leading){
                                 Text(product.title ?? "")
@@ -53,6 +57,7 @@ struct PopularProducts: View {
                             .frame(width: 140)
                         }
                     }
+                    
                 }
                 .padding(.leading,20)
             }

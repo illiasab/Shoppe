@@ -25,12 +25,14 @@ struct HomeToolbar: View {
                         HStack {
                             Text(adress)
                                 .applyFont(.inter,.regular,12)
+                                
                         }
                     }
                 }
                 .offset(x: -10) // ???
                 .ignoresSafeArea()
                 .pickerStyle(.menu)
+                .accentColor(.mainBlack)
             }
             Spacer()
             Button {

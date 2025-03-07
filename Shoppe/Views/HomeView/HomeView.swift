@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     var viewModel: HomeViewModelDelegate?
     @State private var products: [Products] = []
-    @State private var productImages: [String:Image] = [:]
     @State private var searchText: String = ""
     @State private var userAdress = "Russia, Moscow"
 
@@ -56,7 +55,7 @@ struct HomeView: View {
     }
     func fetchProducts() {
           viewModel?.getProduct()
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
               if let popularProducts = viewModel?.popularProducts, !popularProducts.isEmpty {
                   self.products = popularProducts
               }

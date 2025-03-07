@@ -25,6 +25,7 @@
 		AD0F69752D768300000CF5FB /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69742D7682FB000CF5FB /* HomeAssembly.swift */; };
 		AD0F69772D76838A000CF5FB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69762D768385000CF5FB /* HomeViewModel.swift */; };
 		AD0F697A2D76D0DF000CF5FB /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F69792D76D0D7000CF5FB /* CustomButtonView.swift */; };
+		AD6B03B42D7AC2C3008A6C32 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B03B32D7AC2B2008A6C32 /* UIImageExtension.swift */; };
 		AD8680962D74C1C1004C6D13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680932D74C1C1004C6D13 /* ContentView.swift */; };
 		AD8680972D74C1C1004C6D13 /* ShoppeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8680942D74C1C1004C6D13 /* ShoppeApp.swift */; };
 		AD8680982D74C1C1004C6D13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */; };
@@ -130,6 +131,7 @@
 		AD0F69742D7682FB000CF5FB /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		AD0F69762D768385000CF5FB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AD0F69792D76D0D7000CF5FB /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		AD6B03B32D7AC2B2008A6C32 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		AD86807F2D74C1AF004C6D13 /* Shoppe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shoppe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8680902D74C1C1004C6D13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD8680922D74C1C1004C6D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 		ADAB30AD2D757D8E00D47FFD /* Errors */ = {
 			isa = PBXGroup;
 			children = (
+				AD6B03B32D7AC2B2008A6C32 /* UIImageExtension.swift */,
 				ADB7BFF02D795C8B00C44563 /* AuthFlow.swift */,
 				ADB7BFEE2D795C7E00C44563 /* AuthError.swift */,
 				ADD3546D2D7822C50041449D /* Log+Extension.swift */,
@@ -658,6 +661,7 @@
 				ADB7BFAC2D78D43B00C44563 /* HomeView.swift in Sources */,
 				AD0F69712D767AA8000CF5FB /* SignUpViewModel.swift in Sources */,
 				AD0F696F2D7679DB000CF5FB /* LoginViewModel.swift in Sources */,
+				AD6B03B42D7AC2C3008A6C32 /* UIImageExtension.swift in Sources */,
 				ADB7BFAA2D78D43100C44563 /* HomeToolbar.swift in Sources */,
 				ADB7BFEF2D795C8100C44563 /* AuthError.swift in Sources */,
 				AD0F69612D76694B000CF5FB /* LoginView.swift in Sources */,
