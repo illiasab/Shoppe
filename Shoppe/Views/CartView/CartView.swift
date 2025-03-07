@@ -82,6 +82,7 @@ struct CartView: View {
 			.scrollIndicators(.hidden)
 			.padding(.horizontal)
 			CheckoutButtonView(total: calculateTotalPrice(), action: {})
+			BottomNavigationBar()
 		}
 	}
 
