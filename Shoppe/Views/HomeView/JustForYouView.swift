@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct JustForYouView: View {
+    
+    let homeVM = HomeViewModel()
+    
     let priceRegion: String
     let products: [Product]
     let addInCartaction: () -> Void

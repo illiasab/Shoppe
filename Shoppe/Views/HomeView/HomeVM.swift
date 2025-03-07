@@ -20,9 +20,9 @@ enum Category {
 class HomeViewModel: ObservableObject {
     
     //Currency
-    var rur = 90.0
+    var rur = 91.0
     var usd = 1.0
-    var eur = 0.9
+    var eur = 0.85
     
     var priceRegion: String {
         switch userAdress {
@@ -36,9 +36,12 @@ class HomeViewModel: ObservableObject {
     var chooseCategories: [Category] = [.clothing, .bags, .watch, .lingerie, .hoodies, .shoes]
     let adresses = ["Russia, Moscow", "USA, Las Vegas", "England, Manchester"]
     
-    let popularProducts = [Product(title: "Adidas", price: "32", imageUrl: "Lorem ipsum dolor sit amet consectetur.", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "23", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "89", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "40", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "")]
+    var popularProducts = [Product(title: "Adidas", price: "32", imageUrl: "Lorem ipsum dolor sit amet consectetur.", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "23", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "89", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "40", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "99", imageUrl: "", description: "")]
     
-    let justForYouProducts = [Product(title: "Adidas", price: "31", imageUrl: "Lorem ipsum dolor sit amet consectetur.", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "14", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "42", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "56", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur.")]  // 4 product in figma
+    var justForYouProducts = [Product(title: "Adidas", price: "31", imageUrl: "Lorem ipsum dolor sit amet consectetur.", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "14", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "42", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur."), Product(title: "Adidas", price: "56", imageUrl: "", description: "Lorem ipsum dolor sit amet consectetur.")]  // 4 product in figma
+    
+    var popular = [Product]()
+    var just = [Product]()
     
     @Published var userAdress = "Russia, Moscow"
     @Published var searchText = ""
@@ -53,25 +56,38 @@ class HomeViewModel: ObservableObject {
     
     func priceTransform(price: String) -> Double {
         guard let price = Double(price) else { return 0.0 }
+        
         switch userAdress {
-        case "Russia, Moscow": return price * 90
-        case "England, Manchester": return price * 0.90
+        case "Russia, Moscow": return price * rur
+        case "England, Manchester": return price * eur
         default:
             return price
         }
     }
     
-    func updateCurrency () async {
-        let results = await HomeViewNetwork.homeViewNetwork.updateExchangeRate()
+    func updateCurrency() async {
+        let currencyService = CurrencyService()
         
-        rur = results?.data["RUB"]?.value ?? 90.0
-//        usd = results?.data["USD"]?.value ?? 1.0
-//        eur = results?.data["EUR"]?.value ?? 0.9
+        let currencies = await currencyService.fetchCurrencies()
         
-//        rur = data?.data["RUB"]?.value ?? 90
-//        usd = data?.data["USD"]?.value ?? 1.0
-//        eur = data?.data["EUR"]?.value ?? 0.9
+        self.rur = currencies?.data.RUB.value ?? 1.0
+        self.usd = currencies?.data.USD.value ?? 1.0
+        self.eur = currencies?.data.EUR.value ?? 1.0
         
+        
+        
+//    currencyService.fetchCurrencies { result in
+//            switch result {
+//            case .success(let currencies):
+//                self.rur = currencies.data.RUB.value
+//                self.usd = currencies.data.USD.value
+//                self.eur = currencies.data.EUR.value
+//                
+//            case .failure(let error):
+//                print("currence func dont work - fail net operation")
+//                print(error)
+//            }
+//        }
     }
     
 }

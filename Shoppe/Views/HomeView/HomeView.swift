@@ -34,9 +34,11 @@ struct HomeView: View {
                            priceTransform: homeVM.priceTransform)
         }
         .onAppear {
+            
             Task {
-                await homeVM.updateCurrency()
+//                await homeVM.updateCurrency() // apiKey -300 request
             }
+
         }
     }
     
