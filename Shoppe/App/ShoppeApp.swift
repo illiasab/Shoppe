@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 @main
 struct ShoppeApp: App {
+    
     @StateObject var dependencies = Dependencies()
 
     init(){

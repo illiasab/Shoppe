@@ -61,7 +61,7 @@ final class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func showMainFlow() {
-        let mainCoordinator = MainCoordinator(navigationController, dependencies: dependencies)
+        let mainCoordinator = TabBarCoordinator(navigationController, dependencies: dependencies)
         mainCoordinator.finishDelegate = self
         mainCoordinator.start()
         childCoordinators.append(mainCoordinator)
@@ -87,7 +87,7 @@ extension AppCoordinator: CoordinatorFinishDelegate {
             showAuthFlow()
         case .auth:
             showMainFlow()
-        case .app, .main: break
+        case .app, .tabBar: break
         }
     }
 }

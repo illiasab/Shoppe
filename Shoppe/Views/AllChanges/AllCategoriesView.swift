@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AllCategoriesView: View {
-
 	let categories = [
 		CategoryItem(title: "Clothing", imageName: "Placeholder1", items: ["Dresses", "Pants", "Skirt", "Grape"]),
 		CategoryItem(title: "Shoes", imageName: "Placeholder2", items: ["MacBook", "iPhone", "iPad", "Watch"]),
@@ -21,7 +20,13 @@ struct AllCategoriesView: View {
 	init() {
 		_expandedRows = State(initialValue: Dictionary(uniqueKeysWithValues: categories.map { ($0.id, false) }))
 	}
-
+    enum CategoryEvent{
+        case backButtonTapped
+        case toAllCategoriesTapped
+    }
+    
+    var didCategoryEventHandler: ((CategoryEvent) -> Void)?
+    
 	let columns = [
 		GridItem(.flexible()),
 		GridItem(.flexible())
@@ -95,8 +100,12 @@ struct AllCategoriesView: View {
 					.listRowBackground(Color.clear) // Make List background clear
 					.listRowSeparator(.hidden) // Hide List separators
 				}
+               
 			}
 			.listStyle(.plain) // Remove default list styling
+            CustomButtonView(title: "Back", action: {
+                didCategoryEventHandler?(.backButtonTapped)
+            })
 		}
     }
 }

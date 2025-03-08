@@ -7,7 +7,7 @@
 import UIKit
 
 enum CoordinatorType {
-    case app, launch, auth, onboarding, main
+    case app, launch, auth, onboarding, tabBar
 }
 protocol Coordinator: AnyObject {
     var finishDelegate: CoordinatorFinishDelegate? { get }

@@ -53,6 +53,7 @@ enum UserDefaultsKey {
     static let selectedCategory = "selectedCategory"
     static let isAuthenticated = "isAuthenticated"
     static let userFavorites = "userFavorites"
+    static let allCategoriesTapped = "allCategoriesTapped"
 }
 
 enum CoreDataConstant {

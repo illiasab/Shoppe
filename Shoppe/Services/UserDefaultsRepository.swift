@@ -19,6 +19,9 @@ protocol IUserDefaultsRepository {
     func isAuthenticated() -> Bool
     func getFavoriteProducts() -> [Int]
     func setUserFavoriteProduct(_ id: Int)
+    func setAllCategoriesViewTapped(_ value: Bool)
+    func getAllCategoriesViewTapped() -> Bool
+    func resetAllCategoriesViewTapped() 
 }
 
 struct UserDefaultsRepository: IUserDefaultsRepository {
@@ -40,6 +43,18 @@ struct UserDefaultsRepository: IUserDefaultsRepository {
     }
     var isNotUserYet: Bool {
         return container.bool(forKey: UserDefaultsKey.isNotUser)
+    }
+    //
+    func setAllCategoriesViewTapped(_ value: Bool) {
+        container.set(value, forKey: UserDefaultsKey.allCategoriesTapped)
+    }
+    //
+    func getAllCategoriesViewTapped() -> Bool {
+        return container.bool(forKey:UserDefaultsKey.allCategoriesTapped)
+    }
+    //
+    func resetAllCategoriesViewTapped() {
+        container.set(false, forKey: UserDefaultsKey.allCategoriesTapped)
     }
     
     func setUserFavoriteProduct(_ id: Int) {

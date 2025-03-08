@@ -9,6 +9,7 @@ import SwiftUI
 
 final class HomeAssembly {
     static func configure(_ dependencies: IDependencies) -> any View {
-        return dependencies.moduleContainer.getHomeView()
+        return  dependencies.moduleContainer.getHomeView()
     }
 }
+

@@ -16,6 +16,7 @@ protocol IDependencies {
     var authService: IAuthService { get }
     var myProductService: IProductService { get }
     var cartService: ICartService { get }
+    
 }
 
 

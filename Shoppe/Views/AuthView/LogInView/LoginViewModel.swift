@@ -15,7 +15,7 @@ protocol LoginViewModelDelegate: AnyObject {
 final class LoginViewModel: LoginViewModelDelegate {
     private let authService: IAuthService
     private let userDefaultsRepository: IUserDefaultsRepository
-    private let usersModel = UsersModel.shared
+//    private let usersModel = UsersModel.shared
     
     init(_ dependencies: IDependencies) {
         self.authService = dependencies.authService
@@ -24,11 +24,11 @@ final class LoginViewModel: LoginViewModelDelegate {
     
     func login(email: String, password: String, completion: @escaping (Result<Bool, AuthError>) -> Void) {
         
-        if let user = usersModel.findUser(byUsername: email), user.password == password {
-            print("✅ Локальная авторизация успешна!")
-            completion(.success(true))
-            return
-        }
+//        if let user = usersModel.findUser(byUsername: email), user.password == password {
+//            print("✅ Локальная авторизация успешна!")
+//            completion(.success(true))
+//            return
+//        }
         
         Task {
             let result = await authService.logInWithEmail(email: email, password: password)

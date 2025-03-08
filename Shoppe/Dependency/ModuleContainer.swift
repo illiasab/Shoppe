@@ -14,6 +14,8 @@ protocol IModuleContainer {
     func getSignUpView() -> any View
     func getLoginView() -> any View
     func getHomeView() -> any View
+    func getTabBarMockView() -> any View
+    func getAllCategoriesView() -> any View
 //    func getProfileView() -> any View
 }
 
@@ -76,10 +78,28 @@ extension ModuleContainer {
 
 // MARK: - HomeView
 extension ModuleContainer {
-    func getHomeView() -> any View {
-        var view = HomeView(viewModel:HomeViewModel(dependencies))
+    func getHomeView() ->  any View {
+        var view = HomeView(viewModel: HomeViewModel(dependencies))
         let viewModel = HomeViewModel(dependencies)
         view.viewModel = viewModel
+        return view
+    }
+}
+// MARK: - TabBarView
+extension ModuleContainer{
+    func getTabBarMockView() -> any View {
+        var view = TabBarMockView(viewRouter: ViewRouter())
+        let homeVc = HomeAssembly.configure(dependencies)
+        view.controllers = [homeVc]
+        view.startIndex = 0
+        return view
+    }
+}
+
+// MARK: - AllCategoriesView
+extension ModuleContainer{
+    func getAllCategoriesView() -> any View {
+        let view = AllCategoriesView()
         return view
     }
 }

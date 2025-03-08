@@ -38,6 +38,10 @@ protocol HomeViewModelDelegate {
     var chooseCategories: [Category] { get }
     var popularProducts: [Products] { get }
     var justForYouProducts: [Products] { get }
+    func checkIfAllCategoriesTapped() -> Bool
+    func onAllCategoriesTapped()  
+    func resetAllCategoriesTapped()
+    
     var updateHandler: (([Products]) -> Void)? { get set }
     
     func getProduct()
@@ -73,6 +77,7 @@ final class HomeViewModel: HomeViewModelDelegate {
                userDefaultsRepository?.saveSelectedCategory(selectedCategory)
            }
        }
+    
     //MARK: - Currency retrieval
     var priceRegion: String {
         switch userAdress {
@@ -127,6 +132,18 @@ final class HomeViewModel: HomeViewModelDelegate {
     func updateUIWithProducts(_ products: [Products]) {
          updateHandler?(products)
      }
+    
+        func onAllCategoriesTapped() {
+            userDefaultsRepository?.setAllCategoriesViewTapped(true)
+        }
+        
+        func checkIfAllCategoriesTapped() -> Bool {
+            return userDefaultsRepository?.getAllCategoriesViewTapped() ?? false
+        }
+        
+        func resetAllCategoriesTapped() {
+            userDefaultsRepository?.resetAllCategoriesViewTapped()
+        }
 
     func priceTransform(price: Double, adres: String) -> Double {
             

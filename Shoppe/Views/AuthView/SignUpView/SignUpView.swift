@@ -79,14 +79,14 @@ struct SignUpView: View {
         }
     }
     
-    private func signUpUser() async {
+    private func signUpUser()  {
         guard !email.isEmpty, !password.isEmpty else {
             errorMessage = "Email and password cannot be empty."
             return
         }
         errorMessage = nil
         
-        await viewModel?.signUp(email: email, password: password, completion: { result in
+        viewModel?.signUp(email: email, password: password, completion: { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success:
